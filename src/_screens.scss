@@ -1,0 +1,380 @@
+$red: #00ba71;
+// rgb(255, 69, 1);
+// #ff4f09
+// #4FD321 green
+// rgb(255, 79, 9)
+$beige: #e6dccf;
+$black: #2d2d2d;
+$gray1: #f8f8f8;
+$gray2: #dde2e5;
+$gray3: #aab6be;
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Title
+  > div:first-of-type {
+    // border: 1px solid red;
+    padding: 100px 0 50px;
+    @include desktop {
+      padding: 5vw 0 4vw;
+    }
+
+    h1,
+    h2 {
+      display: block;
+      text-align: center;
+    }
+
+    // Alina Ilina — Full Stack Developer
+    h1 {
+      // color: $gray3;
+      font-size: 1.25rem;
+      margin-bottom: 25px;
+      @include tablet {
+        font-size: 1.5rem;
+      }
+      @include desktop {
+        font-size: 1.75vw;
+        margin-bottom: 2vw;
+      }
+    }
+
+    // I code, ergo sum
+    h2 {
+      font-size: 3rem;
+      @include tablet {
+        font-size: 4rem;
+      }
+      @include desktop {
+        font-size: 5vw;
+      }
+    }
+  }
+
+  // Img
+  > div:nth-of-type(2) {
+    width: 100%;
+    height: 40vh;
+    background-color: $gray2;
+  }
+
+  // Text
+  p {
+    display: block;
+    @include phone {
+      width: 95%;
+    }
+    font-size: 1.25rem;
+    @include desktop {
+      font-size: 1.75vw;
+    }
+    text-align: center;
+    padding: 50px 0 50px;
+    span {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}
+
+#services {
+  // border: 1px solid red;
+  ul {
+    li {
+      // border: 1px solid red;
+      width: 100%;
+      max-width: 50em;
+      // margin: 0 auto;
+      @include flex-row;
+      align-items: center;
+      @include mb-inline;
+
+      img {
+        width: 20%;
+        max-width: 5.5em;
+        position: relative;
+        left: -10px;
+      }
+
+      > div {
+        h4 {
+          // border: 1px solid red;
+          @include txt-s;
+          @include mb-inline;
+          @include bold;
+        }
+
+        p {
+          @include txt-s;
+          span {
+            @include bold;
+          }
+        }
+      }
+    }
+
+    @include phone {
+      li {
+        //@include flex-col;
+        @include mb-block;
+
+        img {
+          margin-right: auto;
+        }
+        > div {
+        }
+      }
+    }
+  }
+}
+
+#culture {
+  ul {
+    // border: 1px solid red;
+    @include flex-row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    i,
+    li {
+      width: 100%;
+      @include tablet {
+        width: 45%;
+      }
+      @include desktop {
+        width: 30%;
+      }
+      @include mb-block;
+      @include flex-col;
+
+      h4 {
+        @include txt-sm;
+        font-family: "ITCAvantGardeStd-Demi";
+        @include mb-inline;
+      }
+
+      p {
+        @include txt-sm;
+        span {
+          @include txt-hl;
+        }
+      }
+    }
+  }
+}
+
+#apps {
+  //border: 1px solid red;
+
+  > p {
+    @include txt-l;
+    font-family: "ITCAvantGardeStd-Bk";
+  }
+}
+// Apps accordeon
+.apps {
+  .app {
+    //border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 50em;
+
+    // Header bar
+    > div:first-of-type {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2vw 0.5vw;
+      @include phone {
+        padding: 5vw 0.5vw;
+      }
+
+      cursor: pointer;
+
+      p {
+        @include txt-s;
+      }
+
+      // Title
+      > h4 {
+        @include txt-s;
+        @include bold;
+      }
+
+      // Toggle icon
+      > div {
+        @include txt-l;
+        font-family: "ITCAvantGardeStd-Bk";
+
+        svg {
+          position: relative;
+          top: 0.15em;
+        }
+      }
+    }
+
+    // Description
+    > div:nth-of-type(2) {
+      //border: 1px solid red;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: flex-end;
+
+      > div {
+        // border: 1px solid red;
+        width: 100%;
+      }
+
+      p {
+        @include txt-s;
+        color: $gray3;
+        @include mb-inline;
+      }
+
+      a {
+        display: block;
+        @include txt-s;
+        @include mb-inline;
+      }
+    }
+  }
+}
+
+.accToggle {
+  position: relative;
+  transform: rotate(0deg);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+  left: 0;
+  &.active {
+    transform: rotate(90deg);
+    left: -2px;
+  }
+}
+
+#tools {
+  //border: 1px solid red;
+
+  ul {
+    //border: 1px solid red;
+    width: 100%;
+    @include flex-row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include phone {
+      justify-content: space-around;
+    }
+    @include mb-block;
+    i,
+    li {
+      // border: 1px solid red;
+      @include flex-row;
+      align-items: center;
+
+      width: 20%;
+      @include tablet {
+        width: 25%;
+      }
+      @include phone {
+        width: 50%;
+      }
+      @include mb-block;
+
+      svg {
+        @include txt-l;
+        margin: 0 1vw 0 0;
+        // color: gray;
+      }
+
+      span {
+        @include txt-s;
+        padding: 1vw 0;
+      }
+    }
+  }
+}
+
+#news {
+  ul {
+    @include flex-col;
+
+    li {
+      //border: 1px solid;
+      @include mb-block;
+      // Title
+      h4 {
+        @include txt-l;
+        @include mb-inline;
+      }
+
+      // Description
+      p {
+        @include txt-s;
+        @include mb-inline;
+        max-width: 40em;
+        color: gray;
+      }
+
+      // Link
+      a {
+        @include txt-s;
+        background: linear-gradient(to top, $red 10%, transparent 10%);
+      }
+    }
+  }
+}
+
+#contact {
+  h3 {
+    @include txt-xl;
+    @include el-mb;
+    // text-align: center;
+  }
+
+  > p {
+    @include txt-s;
+    max-width: 40em;
+    @include el-mb;
+    //text-align: center;
+  }
+
+  hr {
+    width: 25%;
+    border-top: 1px solid $red;
+    @include el-mb;
+  }
+
+  ul {
+    //border: 1px solid red;
+    @include flex-col;
+    align-items: flex-end;
+
+    li {
+      //border: 1px solid red;
+      // width: 75%;
+      // text-align: center;
+      @include desktop {
+        //width: 50%;
+      }
+      @include mb-inline;
+      a,
+      p {
+        @include txt-l;
+        svg {
+          position: relative;
+          top: 0.2em;
+        }
+      }
+
+      @include phone {
+        width: 100%;
+      }
+    }
+  }
+}

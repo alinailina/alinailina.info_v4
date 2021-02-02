@@ -1,0 +1,144 @@
+@mixin phone {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin body {
+  font-size: 1rem;
+  @include tablet {
+    font-size: 1.1rem;
+  }
+  @include desktop {
+    font-size: 1.25vw;
+  }
+}
+
+@mixin txt-sm {
+  font-size: 1.05rem;
+  line-height: 1.5;
+
+  @include tablet {
+    font-size: 1.05rem;
+  }
+
+  @include desktop {
+    font-size: 1.1rem;
+  }
+}
+@mixin txt-s {
+  font-size: 1.05rem;
+  line-height: 1.5;
+
+  @include tablet {
+    font-size: 1.05rem;
+  }
+
+  @include desktop {
+    font-size: 1.1rem;
+  }
+}
+
+@mixin txt-lg {
+  font-family: "ITCAvantGardeStd-Md";
+  font-size: 1.5rem;
+  @include tablet {
+    font-size: 1.75rem;
+  }
+
+  @include desktop {
+    font-size: 2vw;
+  }
+}
+@mixin txt-l {
+  font-family: "ITCAvantGardeStd-Md";
+  font-size: 1.5rem;
+  @include tablet {
+    font-size: 1.75rem;
+  }
+
+  @include desktop {
+    font-size: 2vw;
+  }
+}
+
+@mixin txt-xl {
+  font-family: "ITCAvantGardeStd-Md";
+  font-size: 2rem;
+  @include tablet {
+    font-size: 2.25rem;
+  }
+
+  @include desktop {
+    font-size: 3vw;
+  }
+}
+
+@mixin el-mb {
+  margin-bottom: 25px;
+  @include tablet {
+    margin-bottom: 50px;
+  }
+  @include desktop {
+    margin-bottom: 4vw;
+  }
+}
+
+@mixin el-mb {
+  margin-bottom: 25px;
+  @include tablet {
+    margin-bottom: 50px;
+  }
+  @include desktop {
+    margin-bottom: 4vw;
+  }
+}
+
+@mixin txt-hl {
+  background: linear-gradient(to top, #f1f3f4 100%, transparent 100%);
+}
+
+@mixin txt-ul {
+  background: linear-gradient(to top, #ccff33 15%, transparent 15%);
+}
+
+// Utilitis
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin mb-inline {
+  margin-bottom: 0.5em;
+}
+
+@mixin mb-block {
+  margin-bottom: 25px;
+  @include tablet {
+    margin-bottom: 50px;
+  }
+  @include desktop {
+    margin-bottom: 4vw;
+  }
+}
+
+@mixin bold {
+  font-family: "ITCAvantGardeStd-Demi";
+}

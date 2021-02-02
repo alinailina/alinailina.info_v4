@@ -1,0 +1,33 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1080" fill="#00BA71"/>
+<line x1="465" y1="931" x2="465" y2="131" stroke="white" stroke-width="2"/>
+<line x1="1453" y1="931" x2="1453" y2="131" stroke="white" stroke-width="2"/>
+<line x1="1312" y1="931" x2="1312" y2="131" stroke="white" stroke-width="2"/>
+<line x1="1171" y1="931" x2="1171" y2="131" stroke="white" stroke-width="2"/>
+<line x1="1030" y1="931" x2="1030" y2="131" stroke="white" stroke-width="2"/>
+<line x1="888" y1="931" x2="888" y2="131" stroke="white" stroke-width="2"/>
+<line x1="747" y1="931" x2="747" y2="131" stroke="white" stroke-width="2"/>
+<line x1="606" y1="931" x2="606" y2="131" stroke="white" stroke-width="2"/>
+<line x1="466" y1="130" x2="1454" y2="130" stroke="white" stroke-width="2"/>
+<line x1="482" y1="930" x2="1470" y2="930" stroke="white" stroke-width="2"/>
+<line x1="482" y1="782" x2="1470" y2="782" stroke="white" stroke-width="2"/>
+<line x1="466" y1="656" x2="1454" y2="656" stroke="white" stroke-width="2"/>
+<line x1="466" y1="530" x2="1454" y2="530" stroke="white" stroke-width="2"/>
+<line x1="466" y1="395" x2="1454" y2="395" stroke="white" stroke-width="2"/>
+<line x1="466" y1="265" x2="1454" y2="265" stroke="white" stroke-width="2"/>
+<circle cx="1735" cy="549" r="100" fill="#C4C4C4"/>
+<circle cx="976" cy="695" r="25" fill="white"/>
+<circle cx="976" cy="403" r="25" fill="white"/>
+<circle cx="697" cy="481" r="25" fill="#C4C4C4"/>
+<circle cx="697" cy="728" r="25" fill="#C4C4C4"/>
+<rect x="441" y="106" width="50" height="50" fill="black"/>
+<rect x="1438" y="906" width="50" height="50" fill="black"/>
+<rect x="432" y="906" width="50" height="50" fill="black"/>
+<rect x="1429" y="106" width="50" height="50" fill="black"/>
+<rect x="827" y="246" width="298" height="498" rx="49" fill="white" stroke="black" stroke-width="2"/>
+<rect x="852" y="321" width="248" height="348" fill="white" stroke="black" stroke-width="2"/>
+<rect x="673" y="540" width="48" height="48" stroke="black" stroke-width="2"/>
+<rect x="648" y="415" width="98" height="490" stroke="black" stroke-width="2"/>
+<path d="M722 649H672L722 599V649Z" stroke="black"/>
+<path d="M672 806H722L672 856V806Z" stroke="black"/>
+</svg>
