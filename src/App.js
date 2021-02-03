@@ -5,14 +5,16 @@ import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Aside from "./components/Aside";
+import HorisontalScroll from "./screens/HorisontalScroll";
 
 // Screens
 import Header from "./screens/Header";
+import Introduction from "./screens/Introduction";
 import Services from "./screens/Services";
 //import Tools from "./screens/Tools";
 import Tools from "./screens/Tools";
 // import News from "./screens/News";
-import Culture from "./screens/Culture";
+//import Culture from "./screens/Culture";
 import Apps from "./screens/Apps";
 import Contact from "./screens/Contact";
 
@@ -57,9 +59,10 @@ function App() {
       <Aside />
       <main>
         <Header />
+        <Introduction />
         <div></div>
         <Services />
-        <Culture />
+        <HorisontalScroll />
         <Tools />
         <Apps apps={apps} />
         {/* <News /> */}

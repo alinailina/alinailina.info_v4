@@ -1,5 +1,6 @@
 $green: #00ba71;
 // rgb(0, 186, 113)
+$purple: #8e1cfd;
 $gray1: #f8f8f8;
 $gray2: #dde2e5;
 $gray3: #aab6be;
@@ -24,6 +25,7 @@ a {
 
 nav {
   // border: 1px solid red;
+  //background-color: white;
   position: fixed;
   z-index: 1;
   width: 100vw;
@@ -69,7 +71,7 @@ nav {
       li {
         a {
           display: block;
-          @include txt-s;
+          @include S;
           font-family: "ITCAvantGardeStd-Demi";
           text-align: center;
           padding: 1vw 2vw;
@@ -233,7 +235,7 @@ aside {
   > div {
     a {
       display: block;
-      @include txt-s;
+      @include S;
     }
   }
 
@@ -244,7 +246,7 @@ aside {
 
 .backToTop {
   // border: 1px solid red;
-  @include txt-l;
+  @include L;
   position: fixed;
   right: 4vw;
   bottom: 3vw;
@@ -257,19 +259,4 @@ aside {
     vertical-align: middle;
     border-radius: 50%;
   }
-}
-
-// Page heading
-h3 {
-  font-family: "ITCAvantGardeStd-Demi";
-  font-size: 1.75rem;
-  @include tablet {
-    font-size: 1.75rem;
-  }
-  @include desktop {
-    font-size: 2vw;
-  }
-  color: $green;
-  text-align: left;
-  @include mb-block;
 }

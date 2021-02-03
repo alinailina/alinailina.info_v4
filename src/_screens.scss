@@ -1,4 +1,5 @@
 $red: #00ba71;
+$purple: #8e1cfd;
 // rgb(255, 69, 1);
 // #ff4f09
 // #4FD321 green
@@ -9,372 +10,508 @@ $gray1: #f8f8f8;
 $gray2: #dde2e5;
 $gray3: #aab6be;
 
-#about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@mixin container {
+  margin: 0 auto;
+  width: 80%;
+
+  @include phone {
+    width: 90%;
+  }
+}
+
+h3 {
+  @include XL;
+  @include strong;
+}
+
+@mixin padding {
+  padding: 50px 0;
+  @include desktop {
+    padding: 5vw 0;
+  }
+}
+
+#header {
+  // border: 1px solid red;
+  //background-color: #f2ece4;
+  > div {
+    @include container;
+  }
+  padding: 100px 0 50px;
+  @include desktop {
+    padding: 10vw 0 5vw;
+  }
+
+  // Name
+  p:first-of-type {
+    @include L;
+    @include padding;
+  }
 
   // Title
-  > div:first-of-type {
-    // border: 1px solid red;
-    padding: 100px 0 50px;
+  h1 {
+    @include XXL;
+    @include strong;
+    span {
+      font-family: inherit;
+      color: $purple;
+    }
+    margin-bottom: 50px;
     @include desktop {
-      padding: 5vw 0 4vw;
+      margin-bottom: 2.5vw;
     }
+  }
 
-    h1,
-    h2 {
+  hr {
+    width: 30%;
+    border-top: 2px solid black;
+  }
+}
+
+#introduction {
+  //border: 1px solid red;
+  //background-color: #f2ece4;
+  > div {
+    @include container;
+    @include padding;
+    @include flex-col;
+    align-items: flex-end;
+
+    p {
       display: block;
-      text-align: center;
-    }
-
-    // Alina Ilina — Full Stack Developer
-    h1 {
-      // color: $gray3;
-      font-size: 1.25rem;
-      margin-bottom: 25px;
+      width: 80%;
       @include tablet {
-        font-size: 1.5rem;
+        width: 70%;
       }
       @include desktop {
-        font-size: 1.75vw;
+        width: 60%;
+      }
+      @include L;
+      margin-bottom: 25px;
+      @include desktop {
         margin-bottom: 2vw;
       }
-    }
-
-    // I code, ergo sum
-    h2 {
-      font-size: 3rem;
-      @include tablet {
-        font-size: 4rem;
+      span {
+        @include strong;
       }
-      @include desktop {
-        font-size: 5vw;
-      }
-    }
-  }
-
-  // Img
-  > div:nth-of-type(2) {
-    width: 100%;
-    height: 40vh;
-    background-color: $gray2;
-  }
-
-  // Text
-  p {
-    display: block;
-    @include phone {
-      width: 95%;
-    }
-    font-size: 1.25rem;
-    @include desktop {
-      font-size: 1.75vw;
-    }
-    text-align: center;
-    padding: 50px 0 50px;
-    span {
-      color: $red;
-      text-decoration: underline;
     }
   }
 }
 
 #services {
   // border: 1px solid red;
-  ul {
-    li {
-      // border: 1px solid red;
-      width: 100%;
-      max-width: 50em;
-      // margin: 0 auto;
-      @include flex-row;
-      align-items: center;
-      @include mb-inline;
 
-      img {
-        width: 20%;
-        max-width: 5.5em;
-        position: relative;
-        left: -10px;
+  > div {
+    // border: 1px solid red;
+    @include container;
+    padding: 100px 0;
+    @include desktop {
+      padding: 10vw 0;
+    }
+
+    header {
+      > p {
+        @include S;
       }
+      margin-bottom: 50px;
+      @include desktop {
+        margin-bottom: 2.5vw;
+      }
+    }
 
-      > div {
+    ul {
+      @include flex-col;
+
+      li {
+        width: 100%;
+
+        @include flex-row;
+        align-items: flex-start;
+
+        img {
+          width: 25%;
+          max-width: 7em;
+          position: relative;
+          left: -1em;
+          top: -2em;
+        }
+
         h4 {
           // border: 1px solid red;
-          @include txt-s;
-          @include mb-inline;
-          @include bold;
+          @include L;
+          @include strong;
+          margin-bottom: 10px;
+          @include desktop {
+            margin-bottom: 0.5vw;
+          }
         }
 
         p {
-          @include txt-s;
-          span {
-            @include bold;
-          }
+          @include S;
         }
       }
     }
 
     @include phone {
-      li {
-        //@include flex-col;
-        @include mb-block;
-
-        img {
-          margin-right: auto;
-        }
-        > div {
-        }
-      }
     }
   }
 }
 
 #culture {
-  ul {
+  // border: 1px solid red;
+  .card-container {
     // border: 1px solid red;
-    @include flex-row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    i,
-    li {
-      width: 100%;
-      @include tablet {
-        width: 45%;
-      }
+    position: relative;
+    height: 100%;
+    padding: 0 0 0 10vw;
+    @include phone {
+      padding: 0 0 0 5vw;
+    }
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    > div {
+      position: relative;
+      height: 50vh;
+      width: 30vw; // !!!
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 50px; // !!!
+      flex-shrink: 0;
+      padding: 25px;
       @include desktop {
-        width: 30%;
+        padding: 2vw;
       }
-      @include mb-block;
-      @include flex-col;
+      background-color: $green;
+      // background-color: $green;
+      // border-radius: 25px;
 
+      // Section title
+      &:first-of-type {
+        border: 1px solid red;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        @include flex-col;
+        align-items: flex-start;
+        h3 {
+        }
+      }
+
+      // Cards
+      // &:nth-of-type(2) {
+      //   background-color: #00cf6b;
+      // }
+      // &:nth-of-type(3) {
+      //   background-color: #fcea1c;
+      // }
+      // &:nth-of-type(4) {
+      //   background-color: #ff99a3;
+      // }
+      // &:nth-of-type(5) {
+      //   background-color: #00a5cf;
+      // }
+      // &:nth-of-type(6) {
+      //   background-color: #fc5f1c;
+      // }
+
+      // Card contents
       h4 {
-        @include txt-sm;
-        font-family: "ITCAvantGardeStd-Demi";
-        @include mb-inline;
+        @include L;
+        @include strong;
+      }
+
+      img {
+        width: 50%;
+        margin: 0 auto;
       }
 
       p {
-        @include txt-sm;
-        span {
-          @include txt-hl;
-        }
+        @include S;
       }
     }
   }
 }
 
 #apps {
-  //border: 1px solid red;
-
-  > p {
-    @include txt-l;
-    font-family: "ITCAvantGardeStd-Bk";
+  border: 1px solid red;
+  > div {
+    @include container;
+    padding: 100px 0;
+    @include desktop {
+      padding: 10vw 0;
+    }
+    @include flex-row;
+    justify-content: space-between;
+    h3 {
+      width: 30%;
+    }
+    ul {
+      width: 65%;
+    }
   }
-}
-// Apps accordeon
-.apps {
-  .app {
-    //border: 1px solid yellow;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 50em;
 
-    // Header bar
-    > div:first-of-type {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 2vw 0.5vw;
-      @include phone {
-        padding: 5vw 0.5vw;
+  h3 {
+    // border: 1px solid red;
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    height: 50vw;
+    @include tablet {
+      height: 20vw;
+    }
+    @include desktop {
+      height: 15vw;
+    }
+    top: 100px;
+  }
+
+  ul {
+    position: relative;
+    top: 0.5em;
+    li {
+      //border: 1px solid red;
+      height: 50vw;
+      @include tablet {
+        height: 20vw;
       }
-
-      cursor: pointer;
+      @include desktop {
+        height: 15vw;
+      }
+      h4 {
+        @include L;
+        @include strong;
+        margin-bottom: 10px;
+        @include desktop {
+          margin-bottom: 0.5vw;
+        }
+      }
 
       p {
-        @include txt-s;
+        @include S;
+        margin-bottom: 10px;
+        @include desktop {
+          margin-bottom: 0.5vw;
+        }
       }
-
-      // Title
-      > h4 {
-        @include txt-s;
-        @include bold;
-      }
-
-      // Toggle icon
-      > div {
-        @include txt-l;
-        font-family: "ITCAvantGardeStd-Bk";
-
+      a {
+        @include S;
+        background: linear-gradient(to top, $purple 10%, transparent 10%);
         svg {
-          position: relative;
-          top: 0.15em;
+          display: none;
         }
       }
     }
-
-    // Description
-    > div:nth-of-type(2) {
-      //border: 1px solid red;
-      overflow: hidden;
-      transition: all 0.5s ease;
-      display: flex;
-      justify-content: flex-end;
-
-      > div {
-        // border: 1px solid red;
-        width: 100%;
-      }
-
-      p {
-        @include txt-s;
-        color: $gray3;
-        @include mb-inline;
-      }
-
-      a {
-        display: block;
-        @include txt-s;
-        @include mb-inline;
-      }
-    }
-  }
-}
-
-.accToggle {
-  position: relative;
-  transform: rotate(0deg);
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
-  left: 0;
-  &.active {
-    transform: rotate(90deg);
-    left: -2px;
   }
 }
 
 #tools {
-  //border: 1px solid red;
+  padding: 100px 0;
+  border: 1px solid green;
+  > div {
+    @include container;
+  }
 
   ul {
-    //border: 1px solid red;
+    // border: 1px solid red;
     width: 100%;
+    margin-left: auto;
     @include flex-row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+
     @include phone {
       justify-content: space-around;
     }
-    @include mb-block;
-    i,
+
     li {
-      // border: 1px solid red;
+      //border: 1px solid red;
+      //border: 1px solid red;
       @include flex-row;
       align-items: center;
+      justify-content: flex-start;
+      width: 10%;
+      // @include tablet {
+      //   width: 25%;
+      // }
+      // @include phone {
+      //   width: 50%;
+      // }
 
-      width: 20%;
-      @include tablet {
-        width: 25%;
+      &.title {
+        // border: 1px solid red;
+        width: 100%;
+        @include S;
+        margin-top: 25px;
       }
-      @include phone {
-        width: 50%;
-      }
-      @include mb-block;
 
       svg {
-        @include txt-l;
+        //  @include txt-l;
         margin: 0 1vw 0 0;
-        // color: gray;
+
+        font-size: 3rem;
       }
 
       span {
-        @include txt-s;
+        @include S;
         padding: 1vw 0;
-      }
-    }
-  }
-}
-
-#news {
-  ul {
-    @include flex-col;
-
-    li {
-      //border: 1px solid;
-      @include mb-block;
-      // Title
-      h4 {
-        @include txt-l;
-        @include mb-inline;
-      }
-
-      // Description
-      p {
-        @include txt-s;
-        @include mb-inline;
-        max-width: 40em;
-        color: gray;
-      }
-
-      // Link
-      a {
-        @include txt-s;
-        background: linear-gradient(to top, $red 10%, transparent 10%);
+        display: none;
       }
     }
   }
 }
 
 #contact {
-  h3 {
-    @include txt-xl;
-    @include el-mb;
-    // text-align: center;
+  // border: 1px solid red;
+
+  > div {
+    //border: 1px solid red;
+    @include container;
+    padding: 100px 0;
+    @include desktop {
+      padding: 10vw 0;
+    }
   }
 
-  > p {
-    @include txt-s;
-    max-width: 40em;
-    @include el-mb;
-    //text-align: center;
-  }
+  header {
+    h3 {
+      margin-bottom: 10px;
+      @include desktop {
+        margin-bottom: 0.5vw;
+      }
+    }
 
-  hr {
-    width: 25%;
-    border-top: 1px solid $red;
-    @include el-mb;
+    p {
+      @include L;
+      max-width: 20em;
+    }
+    margin-bottom: 50px;
+    @include desktop {
+      margin-bottom: 2.5vw;
+    }
   }
 
   ul {
-    //border: 1px solid red;
+    // border: 1px solid red;
     @include flex-col;
-    align-items: flex-end;
 
     li {
-      //border: 1px solid red;
-      // width: 75%;
-      // text-align: center;
-      @include desktop {
-        //width: 50%;
-      }
-      @include mb-inline;
       a,
       p {
-        @include txt-l;
+        @include L;
+        @include strong;
+
         svg {
           position: relative;
           top: 0.2em;
         }
       }
-
-      @include phone {
-        width: 100%;
-      }
     }
   }
 }
+
+// #news {
+//   ul {
+//     @include flex-col;
+
+//     li {
+//       //border: 1px solid;
+//
+//       h4 {
+//         @include L;
+//       }
+//
+//       p {
+//         @include S;
+//       }
+//
+//       a {
+//         @include txt-S;
+//       }
+//     }
+//   }
+// }
+
+// // Apps accordeon
+// .apps {
+//   .app {
+//     display: flex;
+//     flex-direction: column;
+//     width: 60%;
+//     max-width: 50em;
+
+//     // Header bar
+//     > div:first-of-type {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       padding: 2vw 0.5vw;
+//       @include phone {
+//         padding: 5vw 0.5vw;
+//       }
+
+//       cursor: pointer;
+
+//       p {
+//         @include S;
+//         @include L;
+//       }
+
+//       // Title
+//       > h4 {
+//         @include L;
+//         @include strong;
+//       }
+
+//       // Toggle icon
+//       > div {
+//         @include L;
+
+//         svg {
+//           position: relative;
+//           top: 0.15em;
+//         }
+//       }
+//     }
+
+//     // Description
+//     > div:nth-of-type(2) {
+//       //border: 1px solid red;
+//       overflow: hidden;
+//       transition: all 0.5s ease;
+//       display: flex;
+//       justify-content: flex-end;
+
+//       > div {
+//         // border: 1px solid red;
+//         width: 100%;
+//       }
+
+//       p {
+//         @include txt-s;
+//         color: $gray3;
+//         @include mb-inline;
+//       }
+
+//       a {
+//         display: block;
+//         @include txt-s;
+//         @include mb-inline;
+//       }
+//     }
+//   }
+// }
+
+// .accToggle {
+//   position: relative;
+//   transform: rotate(0deg);
+//   transition-property: all;
+//   transition-duration: 0.5s;
+//   transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+//   left: 0;
+//   &.active {
+//     transform: rotate(90deg);
+//     left: -2px;
+//   }
+// }
