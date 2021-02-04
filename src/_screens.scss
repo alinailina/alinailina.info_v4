@@ -10,12 +10,27 @@ $gray1: #f8f8f8;
 $gray2: #dde2e5;
 $gray3: #aab6be;
 
+$green: #00cf6b;
+$pink: #ff99a3;
+$blue: #00a5cf;
+$orange: #fc5f1c;
+$red: #fc321c;
+$yellow: #fcea1c;
+$nude: #f2ece4;
+
 @mixin container {
   margin: 0 auto;
   width: 80%;
 
   @include phone {
     width: 90%;
+  }
+}
+
+@mixin section-padding {
+  padding: 100px 0;
+  @include desktop {
+    padding: 10vw 0;
   }
 }
 
@@ -33,63 +48,72 @@ h3 {
 
 #header {
   // border: 1px solid red;
-  //background-color: #f2ece4;
   > div {
+    // border: 1px solid red;
     @include container;
+    height: 60vh;
+
+    // Name
+    p:first-of-type {
+      font-size: 4vw;
+      @include phone {
+        font-size: 2rem;
+      }
+      margin-bottom: 10px;
+      @include desktop {
+        margin-bottom: 1vw;
+      }
+    }
+
+    // Title
+    h1 {
+      font-size: 6vw;
+      @include phone {
+        font-size: 8vw;
+      }
+      @include strong;
+
+      span {
+        font-family: inherit;
+        color: $purple;
+        background: linear-gradient(to right, $green, $yellow);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
-  padding: 100px 0 50px;
+  padding: 150px 0 0;
   @include desktop {
-    padding: 10vw 0 5vw;
-  }
-
-  // Name
-  p:first-of-type {
-    @include L;
-    @include padding;
-  }
-
-  // Title
-  h1 {
-    @include XXL;
-    @include strong;
-    span {
-      font-family: inherit;
-      color: $purple;
-    }
-    margin-bottom: 50px;
-    @include desktop {
-      margin-bottom: 2.5vw;
-    }
-  }
-
-  hr {
-    width: 30%;
-    border-top: 2px solid black;
+    padding: 10vw 0 0;
   }
 }
 
 #introduction {
-  //border: 1px solid red;
-  //background-color: #f2ece4;
+  // border: 1px solid red;
+  background-color: $green;
+
   > div {
     @include container;
-    @include padding;
+    padding: 50px 0;
+    @include desktop {
+      padding: 5vw 0;
+    }
     @include flex-col;
     align-items: flex-end;
 
     p {
       display: block;
-      width: 80%;
+      width: 100%;
       @include tablet {
+        width: 80%;
+      }
+      @include desktop {
         width: 70%;
       }
-      @include desktop {
-        width: 60%;
-      }
       @include L;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
       @include desktop {
-        margin-bottom: 2vw;
+        margin-bottom: 1vw;
       }
       span {
         @include strong;
@@ -99,17 +123,23 @@ h3 {
 }
 
 #services {
-  // border: 1px solid red;
+  //border: 1px solid red;
+  background-color: #f2ece4;
 
   > div {
     // border: 1px solid red;
     @include container;
-    padding: 100px 0;
-    @include desktop {
-      padding: 10vw 0;
-    }
+    @include section-padding;
 
     header {
+      // border: 1px solid red;
+
+      h3 {
+        margin-bottom: 10px;
+        @include desktop {
+          margin-bottom: 1vw;
+        }
+      }
       > p {
         @include S;
       }
@@ -120,39 +150,59 @@ h3 {
     }
 
     ul {
-      @include flex-col;
+      // border: 1px solid red;
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       li {
-        width: 100%;
+        // border: 1px solid red;
+        width: 45%;
+        @include flex-col;
+        align-items: center;
 
-        @include flex-row;
-        align-items: flex-start;
+        margin-bottom: 50px;
+        @include desktop {
+          margin-bottom: 5vw;
+        }
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
 
         img {
+          //border: 1px solid red;
           width: 25%;
-          max-width: 7em;
-          position: relative;
-          left: -1em;
-          top: -2em;
+          max-width: 5em;
+
+          margin: 0 0 10px;
+          @include desktop {
+            margin: 0 0 1vw;
+          }
         }
 
         h4 {
           // border: 1px solid red;
           @include L;
+          text-align: center;
           @include strong;
-          margin-bottom: 10px;
+          margin: 0 0 10px;
           @include desktop {
-            margin-bottom: 0.5vw;
+            margin: 0 0 1vw;
           }
         }
 
         p {
           @include S;
         }
-      }
-    }
 
-    @include phone {
+        @media (max-width: 500px) {
+          width: 100%;
+          align-items: flex-start;
+          h4 {
+            text-align: left;
+          }
+        }
+      }
     }
   }
 }
@@ -173,57 +223,70 @@ h3 {
     align-items: center;
     > div {
       position: relative;
-      height: 50vh;
-      width: 30vw; // !!!
+      height: 60vh;
+      width: 300px;
+      @include desktop {
+        width: 25vw;
+      }
       border-radius: 2px;
       display: flex;
       flex-direction: column;
-      margin-right: 50px; // !!!
+      justify-content: space-between;
+      margin-right: 50px;
+      @include desktop {
+        margin-right: 4vw;
+      }
       flex-shrink: 0;
       padding: 25px;
       @include desktop {
         padding: 2vw;
       }
-      background-color: $green;
-      // background-color: $green;
-      // border-radius: 25px;
 
       // Section title
       &:first-of-type {
         border: 1px solid red;
+        width: 200px;
+        @include tablet {
+          width: 200px;
+        }
+        @include desktop {
+          width: 15vw;
+        }
         background-color: transparent;
         border: none;
         padding: 0;
         @include flex-col;
+        justify-content: flex-start;
         align-items: flex-start;
         h3 {
         }
       }
-
       // Cards
-      // &:nth-of-type(2) {
-      //   background-color: #00cf6b;
-      // }
-      // &:nth-of-type(3) {
-      //   background-color: #fcea1c;
-      // }
-      // &:nth-of-type(4) {
-      //   background-color: #ff99a3;
-      // }
-      // &:nth-of-type(5) {
-      //   background-color: #00a5cf;
-      // }
-      // &:nth-of-type(6) {
-      //   background-color: #fc5f1c;
-      // }
+      &:nth-of-type(2) {
+        background-color: #fcea1c;
+      }
+      &:nth-of-type(3) {
+        background-color: #00cf6b;
+      }
+      &:nth-of-type(4) {
+        background-color: #ff99a3;
+      }
+      &:nth-of-type(5) {
+        background-color: #00a5cf;
+      }
+      &:nth-of-type(6) {
+        background-color: #fc5f1c;
+      }
 
       // Card contents
       h4 {
         @include L;
         @include strong;
+        // text-align: center;
       }
 
       img {
+        // border: 1px solid red;
         width: 50%;
         margin: 0 auto;
       }
@@ -235,80 +298,9 @@ h3 {
   }
 }
 
-#apps {
-  border: 1px solid red;
-  > div {
-    @include container;
-    padding: 100px 0;
-    @include desktop {
-      padding: 10vw 0;
-    }
-    @include flex-row;
-    justify-content: space-between;
-    h3 {
-      width: 30%;
-    }
-    ul {
-      width: 65%;
-    }
-  }
-
-  h3 {
-    // border: 1px solid red;
-    position: sticky;
-    position: -webkit-sticky; /* Safari */
-    height: 50vw;
-    @include tablet {
-      height: 20vw;
-    }
-    @include desktop {
-      height: 15vw;
-    }
-    top: 100px;
-  }
-
-  ul {
-    position: relative;
-    top: 0.5em;
-    li {
-      //border: 1px solid red;
-      height: 50vw;
-      @include tablet {
-        height: 20vw;
-      }
-      @include desktop {
-        height: 15vw;
-      }
-      h4 {
-        @include L;
-        @include strong;
-        margin-bottom: 10px;
-        @include desktop {
-          margin-bottom: 0.5vw;
-        }
-      }
-
-      p {
-        @include S;
-        margin-bottom: 10px;
-        @include desktop {
-          margin-bottom: 0.5vw;
-        }
-      }
-      a {
-        @include S;
-        background: linear-gradient(to top, $purple 10%, transparent 10%);
-        svg {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
 #tools {
   padding: 100px 0;
-  border: 1px solid green;
+  //border: 1px solid green;
   > div {
     @include container;
   }
@@ -331,7 +323,7 @@ h3 {
       @include flex-row;
       align-items: center;
       justify-content: flex-start;
-      width: 10%;
+      width: 20%;
       // @include tablet {
       //   width: 25%;
       // }
@@ -339,18 +331,11 @@ h3 {
       //   width: 50%;
       // }
 
-      &.title {
-        // border: 1px solid red;
-        width: 100%;
-        @include S;
-        margin-top: 25px;
-      }
-
       svg {
         //  @include txt-l;
         margin: 0 1vw 0 0;
 
-        font-size: 3rem;
+        @include XL;
       }
 
       span {
@@ -362,9 +347,122 @@ h3 {
   }
 }
 
-#contact {
+#apps {
   // border: 1px solid red;
+  background-color: $nude;
+  > div {
+    @include container;
+    @include section-padding;
+    @include flex-row;
+    justify-content: space-between;
 
+    header {
+      width: 30%;
+    }
+    ul {
+      width: 65%;
+    }
+
+    @include desktop {
+      header {
+        width: 20%;
+      }
+      ul {
+        width: 75%;
+      }
+    }
+  }
+
+  header {
+    // border: 1px solid red;
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    height: 50vw;
+    @include tablet {
+      height: 25vw;
+    }
+    @include desktop {
+      height: 20vw;
+    }
+    top: 100px;
+
+    h3 {
+      margin-bottom: 10px;
+      @include desktop {
+        margin-bottom: 1vw;
+      }
+    }
+
+    > p {
+      @include S;
+    }
+  }
+
+  ul {
+    li {
+      //border-left: 200px solid red;
+      height: 50vw;
+      @include tablet {
+        height: 25vw;
+      }
+      @include desktop {
+        height: 20vw;
+      }
+      h4 {
+        @include L;
+        @include strong;
+        margin-bottom: 10px;
+        @include desktop {
+          margin-bottom: 0.5vw;
+        }
+      }
+
+      p {
+        @include S;
+        margin-bottom: 10px;
+        @include desktop {
+          margin-bottom: 0.5vw;
+        }
+        // max-width: 30em;
+      }
+
+      > div {
+        // border: 1px solid red;
+        display: flex;
+        display: flex;
+        // button {
+        //   @include S;
+        //   @include strong;
+        //   border: 2px solid $green;
+        //   padding: 8px 25px;
+        //   border-radius: 30px;
+        //   &:first-of-type {
+        //     background-color: transparent;
+        //     margin: 0 10px 0 0;
+        //     @include desktop {
+        //       margin: 0 1vw 0 0;
+        //     }
+        //   }
+        //   &:nth-of-type(2) {
+        //     background-color: $green;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+@keyframes spinner {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+
+#contact {
+  // background-color: $pink;
   > div {
     //border: 1px solid red;
     @include container;
@@ -372,40 +470,43 @@ h3 {
     @include desktop {
       padding: 10vw 0;
     }
-  }
+    @include flex-row;
+    justify-content: space-between;
+    > div:first-of-type {
+      width: 70%;
+      p {
+        @include S;
+        margin-bottom: 10px;
+        @include desktop {
+          margin-bottom: 1vw;
+        }
+      }
 
-  header {
-    h3 {
-      margin-bottom: 10px;
-      @include desktop {
-        margin-bottom: 0.5vw;
+      ul {
+        li {
+          a {
+            @include XL;
+            @include strong;
+          }
+          span {
+            @include XL;
+            @include strong;
+            //   display: none;
+          }
+        }
       }
     }
 
-    p {
-      @include L;
-      max-width: 20em;
-    }
-    margin-bottom: 50px;
-    @include desktop {
-      margin-bottom: 2.5vw;
-    }
-  }
-
-  ul {
-    // border: 1px solid red;
-    @include flex-col;
-
-    li {
-      a,
-      p {
-        @include L;
-        @include strong;
-
-        svg {
-          position: relative;
-          top: 0.2em;
-        }
+    // Spinner
+    > div:nth-of-type(2) {
+      border: 1px solid red;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      border-radius: 50%;
+      cursor: pointer;
+      a {
+        border: 1px solid red;
       }
     }
   }

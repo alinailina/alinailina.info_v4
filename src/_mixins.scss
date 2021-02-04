@@ -17,6 +17,15 @@
   }
 }
 
+@mixin container {
+  margin: 0 auto;
+  width: 80%;
+
+  @include phone {
+    width: 90%;
+  }
+}
+
 // Flex containers
 @mixin flex-col {
   display: flex;
@@ -38,7 +47,7 @@
   }
 
   @include desktop {
-    font-size: 1.25vw;
+    font-size: 1.4vw;
   }
 }
 

@@ -16,7 +16,7 @@ const Introduction = () => {
           eaque quis cum nemo voluptates exercitationem reprehenderit doloribus
           aliquid molestias necessitatibus corrupti.
         </p>
-        <p>Send me a message</p>
+        <button>Some button</button>
       </div>
     </div>
   );

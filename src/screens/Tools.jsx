@@ -15,16 +15,19 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
-import { FaSass, FaGitAlt } from "react-icons/fa";
+import { FaGitAlt } from "react-icons/fa";
 
 const Tools = () => {
   return (
     <section id="tools">
       <div>
         <h3>Tools</h3>
-        <p>I&apos;ve used this far</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          totam vitae labore qui similique laborum repellat ratione ducimus modi
+          autem. Magnam reprehenderit, ullam incidunt corporis iusto excepturi.
+        </p>
         <ul>
-          <li className="title">Languages</li>
           <li>
             <SiJavascript />
             <span>JavaScript (ES6)</span>
@@ -37,7 +40,7 @@ const Tools = () => {
             <SiNodeDotJs />
             <span>Node (Express)</span>
           </li>
-          <li className="title">Languages</li>
+
           <li>
             <SiTypescript />
             <span>Typescript</span>
@@ -50,7 +53,7 @@ const Tools = () => {
             <SiJest />
             <span>Jest</span>
           </li>
-          <li className="title">Languages</li>
+
           <li>
             <SiGraphql />
             <span>GraphQL</span>
@@ -64,7 +67,7 @@ const Tools = () => {
             <span>CSS3</span>
           </li>
           <li>
-            <FaSass />
+            <SiCss3 />
             <span>SASS</span>
           </li>
           <li>
@@ -79,7 +82,7 @@ const Tools = () => {
             <SiWordpress />
             <span>WordPress</span>
           </li>
-          <li className="title">Design and prototyping</li>
+
           <li>
             <SiFigma />
             <span>Figma</span>

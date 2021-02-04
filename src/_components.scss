@@ -5,6 +5,14 @@ $gray1: #f8f8f8;
 $gray2: #dde2e5;
 $gray3: #aab6be;
 
+$green: #00cf6b;
+$pink: #ff99a3;
+$blue: #00a5cf;
+$orange: #fc5f1c;
+$red: #fc321c;
+$yellow: #fcea1c;
+$nude: #f2ece4;
+
 img {
   width: 100%;
 }
@@ -23,7 +31,17 @@ a {
   text-decoration: none;
 }
 
+@keyframes spinner {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+
 nav {
+  //background-color: #f2ece4;
   // border: 1px solid red;
   //background-color: white;
   position: fixed;
@@ -48,10 +66,25 @@ nav {
     cursor: pointer;
 
     > div {
-      //background-color: $green;
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
+      height: 80px;
+      width: 80px;
+      @include phone {
+        height: 60px;
+        width: 60px;
+      }
+      position: relative;
+
+      img {
+        animation: spinner 10s infinite linear;
+      }
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include L;
+      }
     }
   }
 
@@ -81,10 +114,10 @@ nav {
         }
         // Contact
         &:nth-of-type(5) {
-          border: 2px solid $green;
+          border: 2px solid $purple;
           border-radius: 1px;
           &:hover {
-            background-color: $green;
+            background-color: $purple;
             a {
               color: black;
             }
@@ -251,12 +284,39 @@ aside {
   right: 4vw;
   bottom: 3vw;
   @include phone {
-    bottom: 5vw;
+    bottom: 7vw;
   }
 
   svg {
     fill: black;
     vertical-align: middle;
     border-radius: 50%;
+  }
+}
+
+footer {
+  p {
+    display: block;
+    @include container;
+    padding: 3vw 0;
+    @include S;
+    // @include strong;
+    svg {
+      color: $red;
+    }
+  }
+}
+
+.spinner {
+  position: relative;
+
+  img {
+    animation: spinner 10s infinite linear;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

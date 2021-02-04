@@ -9,7 +9,7 @@ const Services = () => {
       <div>
         <header>
           <h3>Services</h3>
-          <p>Things I can help you with</p>
+          <p>What I do</p>
         </header>
         <ul>
           <li>
@@ -24,23 +24,22 @@ const Services = () => {
             </div>
           </li>
           <li>
+            <img src={ui} alt="devices-icon" />
+            <div>
+              <h4>UI design</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem quaerat enim vel est voluptatibus.
+              </p>
+            </div>
+          </li>
+          <li>
             <img src={server} alt="server-icon" />
             <div>
               <h4>Back-end development</h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Consectetur tenetur officia.
-              </p>
-            </div>
-          </li>
-          <li>
-            <img src={ui} alt="devices-icon" />
-            <div>
-              <h4>User interface design</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Consectetur tenetur officia nulla officiis autem explicabo.
-                Maxime, ex autem.
               </p>
             </div>
           </li>

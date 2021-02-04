@@ -6,9 +6,9 @@ const Header = () => {
       <div>
         <p>Alina Ilina</p>
         <h1>
-          Full Stack Developer <br />& <span>UI Imagineer</span>
+          Full Stack Developer, <br />
+          <span>UI Imagineer</span> &mdash; Helsinki, Finland
         </h1>
-        <hr />
       </div>
     </header>
   );

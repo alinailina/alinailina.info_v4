@@ -1,16 +1,13 @@
 import React from "react";
-// import App from "./App";
-import { BiRightArrowAlt } from "react-icons/bi";
+
 const Apps = () => {
   return (
     <section id="apps">
-      <div id="wrapper">
-        <h3 id="sticky">Apps</h3>
-        {/* <div className="apps">
-          {apps.map((app, i) => (
-            <App key={i} id={i} app={app} />
-          ))}
-        </div> */}
+      <div>
+        <header>
+          <h3>Apps</h3>
+          <p>What I&apos;ve been up to</p>
+        </header>
         <ul>
           <li>
             <h4>App 1</h4>
@@ -19,10 +16,11 @@ const Apps = () => {
               dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
               eaque, debitis perspiciatis sequi consequuntur ipsum.
             </p>
-            <a href="/">
-              Link
-              <BiRightArrowAlt />
-            </a>
+            <p>Tools: 1, 2, 3, 4</p>
+            <div>
+              <button>See code</button>
+              <button>Visit site</button>
+            </div>
           </li>
           <li>
             <h4>App 2</h4>
@@ -31,10 +29,11 @@ const Apps = () => {
               dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
               eaque, debitis perspiciatis sequi consequuntur ipsum.
             </p>
-            <a href="/">
-              Link
-              <BiRightArrowAlt />
-            </a>
+            <p>Tools: 1, 2, 3, 4</p>
+            <div>
+              <button>See code</button>
+              <button>Visit site</button>
+            </div>
           </li>
           <li>
             <h4>App 3</h4>
@@ -43,10 +42,11 @@ const Apps = () => {
               dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
               eaque, debitis perspiciatis sequi consequuntur ipsum.
             </p>
-            <a href="/">
-              Link
-              <BiRightArrowAlt />
-            </a>
+            <p>Tools: 1, 2, 3, 4</p>
+            <div>
+              <button>See code</button>
+              <button>Visit site</button>
+            </div>
           </li>
           <li>
             <h4>App 4</h4>
@@ -55,7 +55,11 @@ const Apps = () => {
               dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
               eaque, debitis perspiciatis sequi consequuntur ipsum.
             </p>
-            <a href="/">Link</a>
+            <p>Tools: 1, 2, 3, 4</p>
+            <div>
+              <button>See code</button>
+              <button>Visit site</button>
+            </div>
           </li>
         </ul>
       </div>

@@ -1,6 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import devices from "../../assets/icons/devices.svg";
+import shapes from "../../assets/icons/shapes.svg";
+import honesty from "../../assets/icons/honesty.svg";
+//import sparkles from "../../assets/icons/sparkles.svg";
+import pen from "../../assets/icons/pen.svg";
+import puzzle from "../../assets/icons/puzzle.svg";
+import flag from "../../assets/icons/flag.svg";
 import { handleDynamicHeight, applyScrollListener } from "./helpers.js";
 
 const OuterContainer = styled.div.attrs(({ dynamicHeight }) => ({
@@ -51,46 +56,47 @@ const HorisontalScroll = () => {
             <div className="card-container">
               <div>
                 <h3>Culture</h3>
-                <p>Things that matter to me</p>
+                <p>First things first</p>
               </div>
               <div>
                 <h4>Simplicity</h4>
-                <img src={devices} alt="interface-icon" />
+                <img src={shapes} alt="basic-shapes" />
                 <p>
                   Clean organised code, fluff-free interfaces. I aim to strike a{" "}
                   <span>balance between simple and considered outcomes</span>.
                 </p>
               </div>
               <div>
-                <h4>Simplicity</h4>
-                <img src={devices} alt="interface-icon" />
+                <h4>Honesty</h4>
+                <img src={honesty} alt="interface-icon" />
                 <p>
-                  Clean organised code, fluff-free interfaces. I aim to strike a{" "}
-                  <span>balance between simple and considered outcomes</span>.
+                  I believe in the power of honest communication, trust,
+                  transparency and short feedback cycle.
                 </p>
               </div>
               <div>
-                <h4>Simplicity</h4>
-                <img src={devices} alt="interface-icon" />
+                <h4>Pixel-perfect precision</h4>
+                <img src={pen} alt="interface-icon" />
                 <p>
-                  Clean organised code, fluff-free interfaces. I aim to strike a{" "}
-                  <span>balance between simple and considered outcomes</span>.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis, illum hic ratione rem porro itaque.
                 </p>
               </div>
               <div>
-                <h4>Simplicity</h4>
-                <img src={devices} alt="interface-icon" />
+                <h4>Ownership / Accountability</h4>
+                <img src={flag} alt="flag-icon" />
                 <p>
-                  Clean organised code, fluff-free interfaces. I aim to strike a{" "}
-                  <span>balance between simple and considered outcomes</span>.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis, illum hic ratione rem porro itaque.
                 </p>
               </div>
+
               <div className="card">
-                <h4>Simplicity</h4>
-                <img src={devices} alt="interface-icon" />
+                <h4>Common sence</h4>
+                <img src={puzzle} alt="puzzle-icon" />
                 <p>
-                  Clean organised code, fluff-free interfaces. I aim to strike a{" "}
-                  <span>balance between simple and considered outcomes</span>.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis, illum hic ratione rem porro itaque.
                 </p>
               </div>
             </div>

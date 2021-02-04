@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { RiArrowRightLine } from "react-icons/ri";
-import { RiArrowRightUpLine } from "react-icons/ri";
+import { RiArrowRightUpLine, RiDownloadLine } from "react-icons/ri";
 
+import spinner from "../assets/icons/spinner.svg";
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
@@ -27,7 +28,12 @@ const Navbar = () => {
   return (
     <nav style={{ top: visible ? "0" : "-120px" }}>
       <div>
-        <div></div>
+        <div>
+          <img src={spinner} alt="Download CV" />
+          <a href="/">
+            <RiDownloadLine />
+          </a>
+        </div>
       </div>
       <div className={active ? "active" : ""}>
         <ul>
