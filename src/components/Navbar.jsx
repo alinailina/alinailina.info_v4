@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { RiArrowRightLine } from "react-icons/ri";
-import { RiArrowRightUpLine, RiDownloadLine } from "react-icons/ri";
+import { RiArrowDownLine } from "react-icons/ri";
 
 import spinner from "../assets/icons/spinner.svg";
 const Navbar = () => {
@@ -31,7 +30,7 @@ const Navbar = () => {
         <div>
           <img src={spinner} alt="Download CV" />
           <a href="/">
-            <RiDownloadLine />
+            <RiArrowDownLine />
           </a>
         </div>
       </div>
@@ -39,22 +38,17 @@ const Navbar = () => {
         <ul>
           <li>
             <Link to="services" activeClass="active" spy={true}>
-              Services <RiArrowRightLine />
+              Services
             </Link>
           </li>
           <li>
             <Link to="culture" activeClass="active" spy={true}>
-              Culture <RiArrowRightLine />
-            </Link>
-          </li>
-          <li>
-            <Link to="tools" activeClass="active" spy={true}>
-              Tools <RiArrowRightLine />
+              Culture
             </Link>
           </li>
           <li>
             <Link to="apps" activeClass="active" spy={true}>
-              Apps <RiArrowRightLine />
+              Apps
             </Link>
           </li>
           {/* <li>
@@ -64,20 +58,24 @@ const Navbar = () => {
           </li> */}
           <li>
             <Link to="contact" activeClass="active" spy={true}>
-              Contact <RiArrowRightLine />
+              Contact
             </Link>
           </li>
           <li>
-            <Link to="contact" activeClass="active" spy={true}>
-              <a href="/">
-                Lk
-                <RiArrowRightUpLine />
-              </a>
-              <a href="/">
-                Git
-                <RiArrowRightUpLine />
-              </a>
-            </Link>
+            <ul>
+              <li>
+                <a href="/">LinkedIn</a>
+              </li>
+              <li>
+                <a href="/">Medium</a>
+              </li>
+              <li>
+                <a href="/">Instagram</a>
+              </li>
+              <li>
+                <a href="/">Github</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

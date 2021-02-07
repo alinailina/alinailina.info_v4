@@ -6,62 +6,14 @@ const Apps = () => {
       <div>
         <header>
           <h3>Apps</h3>
-          <p>What I&apos;ve been up to</p>
         </header>
-        <ul>
-          <li>
-            <h4>App 1</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-              dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
-              eaque, debitis perspiciatis sequi consequuntur ipsum.
-            </p>
-            <p>Tools: 1, 2, 3, 4</p>
-            <div>
-              <button>See code</button>
-              <button>Visit site</button>
-            </div>
-          </li>
-          <li>
-            <h4>App 2</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-              dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
-              eaque, debitis perspiciatis sequi consequuntur ipsum.
-            </p>
-            <p>Tools: 1, 2, 3, 4</p>
-            <div>
-              <button>See code</button>
-              <button>Visit site</button>
-            </div>
-          </li>
-          <li>
-            <h4>App 3</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-              dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
-              eaque, debitis perspiciatis sequi consequuntur ipsum.
-            </p>
-            <p>Tools: 1, 2, 3, 4</p>
-            <div>
-              <button>See code</button>
-              <button>Visit site</button>
-            </div>
-          </li>
-          <li>
-            <h4>App 4</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-              dolores eveniet vel id maiores nesciunt dolorem suscipit rerum
-              eaque, debitis perspiciatis sequi consequuntur ipsum.
-            </p>
-            <p>Tools: 1, 2, 3, 4</p>
-            <div>
-              <button>See code</button>
-              <button>Visit site</button>
-            </div>
-          </li>
-        </ul>
+        <p>
+          404 <span>Not Found</span>
+        </p>
+        <p>
+          I&apos;m working hard to feature selected works here. <br />
+          Fancy checking my <a href="">Github</a>, while you wait?
+        </p>
       </div>
     </section>
   );

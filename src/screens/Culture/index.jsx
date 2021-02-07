@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import shapes from "../../assets/icons/shapes.svg";
-import honesty from "../../assets/icons/honesty.svg";
-//import sparkles from "../../assets/icons/sparkles.svg";
-import pen from "../../assets/icons/pen.svg";
+import abc from "../../assets/icons/abc.svg";
+import line from "../../assets/icons/line.svg";
+import aim from "../../assets/icons/aim.svg";
 import puzzle from "../../assets/icons/puzzle.svg";
-import flag from "../../assets/icons/flag.svg";
+import flag1 from "../../assets/icons/flag1.svg";
 import { handleDynamicHeight, applyScrollListener } from "./helpers.js";
 
 const OuterContainer = styled.div.attrs(({ dynamicHeight }) => ({
@@ -56,11 +55,11 @@ const HorisontalScroll = () => {
             <div className="card-container">
               <div>
                 <h3>Culture</h3>
-                <p>First things first</p>
+                <p>What I am</p>
               </div>
               <div>
                 <h4>Simplicity</h4>
-                <img src={shapes} alt="basic-shapes" />
+                <img src={abc} alt="basic-shapes" />
                 <p>
                   Clean organised code, fluff-free interfaces. I aim to strike a{" "}
                   <span>balance between simple and considered outcomes</span>.
@@ -68,7 +67,7 @@ const HorisontalScroll = () => {
               </div>
               <div>
                 <h4>Honesty</h4>
-                <img src={honesty} alt="interface-icon" />
+                <img src={line} alt="interface-icon" />
                 <p>
                   I believe in the power of honest communication, trust,
                   transparency and short feedback cycle.
@@ -76,7 +75,7 @@ const HorisontalScroll = () => {
               </div>
               <div>
                 <h4>Pixel-perfect precision</h4>
-                <img src={pen} alt="interface-icon" />
+                <img src={aim} alt="interface-icon" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Perspiciatis, illum hic ratione rem porro itaque.
@@ -84,7 +83,7 @@ const HorisontalScroll = () => {
               </div>
               <div>
                 <h4>Ownership / Accountability</h4>
-                <img src={flag} alt="flag-icon" />
+                <img src={flag1} alt="flag-icon" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Perspiciatis, illum hic ratione rem porro itaque.

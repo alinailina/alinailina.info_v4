@@ -5,9 +5,10 @@ const Header = () => {
     <header id="header">
       <div>
         <p>Alina Ilina</p>
+
         <h1>
           Full Stack Developer, <br />
-          <span>UI Imagineer</span> &mdash; Helsinki, Finland
+          &#10005;<span> UI Imagineer</span> &mdash; Helsinki, Finland
         </h1>
       </div>
     </header>

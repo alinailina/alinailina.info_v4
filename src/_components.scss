@@ -1,10 +1,9 @@
-$green: #00ba71;
-// rgb(0, 186, 113)
+// Colors
+$gray-S: #f4f4f4;
+$gray-M: #dde2e5;
+$gray-L: #aab6be;
 $purple: #8e1cfd;
-$gray1: #f8f8f8;
-$gray2: #dde2e5;
-$gray3: #aab6be;
-
+$lilac: #ceb4ff;
 $green: #00cf6b;
 $pink: #ff99a3;
 $blue: #00a5cf;
@@ -24,9 +23,6 @@ ul {
 
 a {
   color: black;
-  &:hover {
-    color: $green;
-  }
   cursor: pointer;
   text-decoration: none;
 }
@@ -41,9 +37,7 @@ a {
 }
 
 nav {
-  //background-color: #f2ece4;
   // border: 1px solid red;
-  //background-color: white;
   position: fixed;
   z-index: 1;
   width: 100vw;
@@ -59,6 +53,9 @@ nav {
   > div:first-of-type {
     // border: 1px solid red;
     width: 10vw;
+    @include tablet {
+      width: 12.5vw;
+    }
     height: 100%;
     display: flex;
     align-items: center;
@@ -68,6 +65,10 @@ nav {
     > div {
       height: 80px;
       width: 80px;
+      @include tablet {
+        height: 70px;
+        width: 70px;
+      }
       @include phone {
         height: 60px;
         width: 60px;
@@ -76,6 +77,8 @@ nav {
 
       img {
         animation: spinner 10s infinite linear;
+        // background-color: $green;
+        border-radius: 50%;
       }
 
       svg {
@@ -84,6 +87,7 @@ nav {
         left: 50%;
         transform: translate(-50%, -50%);
         @include L;
+        //fill: $yellow;
       }
     }
   }
@@ -92,7 +96,7 @@ nav {
   > div:nth-of-type(2) {
     //border: 1px solid red;
     width: 90vw;
-    ul {
+    > ul {
       // border: 1px solid yellow;
       width: 90%;
       margin: 0 auto;
@@ -101,28 +105,24 @@ nav {
       justify-content: flex-end;
       align-items: center;
 
-      li {
+      > li {
+        // border: 1px solid red;
         a {
+          // border: 1px solid red;
           display: block;
+          width: 15vw;
+          max-width: 7.5em;
+          @include desktop {
+            width: 10vw;
+          }
           @include S;
-          font-family: "ITCAvantGardeStd-Demi";
           text-align: center;
-          padding: 1vw 2vw;
-          svg {
-            display: none;
-          }
-        }
-        // Contact
-        &:nth-of-type(5) {
-          border: 2px solid $purple;
-          border-radius: 1px;
+          font-weight: 400;
           &:hover {
-            background-color: $purple;
-            a {
-              color: black;
-            }
+            font-weight: 800;
           }
         }
+
         // Social links
         &:last-of-type {
           display: none;
@@ -146,64 +146,40 @@ nav {
 
     // Links
     > div:nth-of-type(2) {
-      width: 50%;
+      // border: 1px solid red;
+      width: 70%;
       position: absolute;
       right: -100%;
       height: 100vh;
-      background-color: $gray1;
+      background-color: $nude;
       display: flex;
       justify-content: center;
       align-items: center;
 
-      ul {
+      > ul {
         // border: 1px solid red;
-        width: 60%;
-        height: 80%;
+        width: 80%;
+        height: 100%;
+        padding: 80px 0;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
 
-        li {
-          //border: 1px solid red;
+        > li {
+          // border: 1px solid red;
           a {
-            //border: 1px solid red;
-            font-size: 1.5rem;
-
-            &:hover {
-              svg {
-                display: inline-block;
-                position: relative;
-                top: 0.15em;
-              }
-            }
-          }
-
-          // Contact
-          &:nth-of-type(5) {
-            border: none;
-            &:hover {
-              background-color: inherit;
-              a {
-                color: $green;
-              }
-            }
+            @include L;
+            text-align: left;
           }
 
           // Social links
           &:last-of-type {
             margin-top: auto;
-            @include flex-col;
+            display: block;
 
             a {
-              text-align: left;
-              svg {
-                display: inline-block;
-              }
-              &:hover {
-                svg {
-                  top: 0;
-                }
-              }
+              @include S;
+              text-decoration: underline;
             }
           }
         }
@@ -275,6 +251,7 @@ aside {
   @include phone {
     display: none;
   }
+  display: none;
 }
 
 .backToTop {
@@ -295,28 +272,126 @@ aside {
 }
 
 footer {
-  p {
-    display: block;
+  // border: 1px solid red;
+  padding: 50px 0;
+  @include desktop {
+    padding: 5vw 0;
+  }
+  background-color: $gray-S;
+
+  > div {
     @include container;
-    padding: 3vw 0;
-    @include S;
-    // @include strong;
-    svg {
-      color: $red;
+
+    > div:first-of-type {
+      @include flex-row;
+      justify-content: flex-end;
+
+      p {
+        font-size: 6rem;
+        font-weight: 600;
+      }
+      // Info
+      > div {
+        width: 15%;
+        &:first-of-type {
+          width: 30%;
+        }
+        @include tablet {
+          width: 20%;
+          &:first-of-type {
+            width: 40%;
+          }
+        }
+        @include phone {
+          width: 30%;
+          &:first-of-type {
+            width: 50%;
+          }
+        }
+
+        h4 {
+          @include S;
+          font-weight: 600;
+          margin-bottom: 10px;
+          @include desktop {
+            margin-bottom: 1vw;
+          }
+        }
+
+        // border: 1px solid red;
+
+        ul {
+          li {
+            @include S;
+            a {
+              // text-decoration: underline;
+            }
+          }
+        }
+      }
     }
-  }
-}
 
-.spinner {
-  position: relative;
+    #form {
+      // border: 1px solid red;
+      @include flex-row;
+      margin-bottom: 25px;
+      @include desktop {
+        margin-bottom: 1vw;
+      }
+      width: 45%;
+      @include tablet {
+        width: 45%;
+      }
+      @include phone {
+        width: 90%;
+      }
 
-  img {
-    animation: spinner 10s infinite linear;
-  }
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+      h4,
+      label,
+      button {
+        // border: 1px solid red;
+        @include L;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        top: 0.1em;
+        margin: 0 1vw;
+      }
+
+      form {
+        width: 100%;
+        @include flex-row;
+
+        label {
+          // border: 1px solid red;
+          width: 100%;
+
+          input {
+            @include S;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            padding: 5px;
+            outline: none;
+          }
+          p {
+            @include S;
+          }
+        }
+      }
+    }
+
+    // Copyright
+    > p {
+      // border: 1px solid red;
+      display: block;
+      @include S;
+    }
   }
 }

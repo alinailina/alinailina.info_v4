@@ -1,15 +1,9 @@
-$red: #00ba71;
+// Colors
+$gray-S: #f4f4f4;
+$gray-M: #dde2e5;
+$gray-L: #aab6be;
 $purple: #8e1cfd;
-// rgb(255, 69, 1);
-// #ff4f09
-// #4FD321 green
-// rgb(255, 79, 9)
-$beige: #e6dccf;
-$black: #2d2d2d;
-$gray1: #f8f8f8;
-$gray2: #dde2e5;
-$gray3: #aab6be;
-
+$lilac: #ceb4ff;
 $green: #00cf6b;
 $pink: #ff99a3;
 $blue: #00a5cf;
@@ -35,7 +29,7 @@ $nude: #f2ece4;
 }
 
 h3 {
-  @include XL;
+  @include L;
   @include strong;
 }
 
@@ -47,7 +41,8 @@ h3 {
 }
 
 #header {
-  // border: 1px solid red;
+  //border: 1px solid red;
+  background-color: $nude;
   > div {
     // border: 1px solid red;
     @include container;
@@ -55,7 +50,7 @@ h3 {
 
     // Name
     p:first-of-type {
-      font-size: 4vw;
+      font-size: 3vw;
       @include phone {
         font-size: 2rem;
       }
@@ -63,20 +58,22 @@ h3 {
       @include desktop {
         margin-bottom: 1vw;
       }
+      font-family: "ITCAvantGardeStd-Md";
+      // color: $orange;
     }
 
     // Title
     h1 {
-      font-size: 6vw;
+      font-size: 5vw;
       @include phone {
         font-size: 8vw;
       }
       @include strong;
-
+      font-family: "ITCAvantGardeStd-Md";
       span {
         font-family: inherit;
-        color: $purple;
-        background: linear-gradient(to right, $green, $yellow);
+        color: $orange;
+        background: linear-gradient(to right, $green, $yellow, $orange);
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -90,7 +87,6 @@ h3 {
 
 #introduction {
   // border: 1px solid red;
-  background-color: $green;
 
   > div {
     @include container;
@@ -116,7 +112,7 @@ h3 {
         margin-bottom: 1vw;
       }
       span {
-        @include strong;
+        font-weight: 600;
       }
     }
   }
@@ -124,7 +120,7 @@ h3 {
 
 #services {
   //border: 1px solid red;
-  background-color: #f2ece4;
+  background-color: $nude;
 
   > div {
     // border: 1px solid red;
@@ -140,6 +136,7 @@ h3 {
           margin-bottom: 1vw;
         }
       }
+
       > p {
         @include S;
       }
@@ -149,41 +146,45 @@ h3 {
       }
     }
 
-    ul {
+    // Cards
+    > ul {
       // border: 1px solid red;
       @include flex-row;
       flex-wrap: wrap;
       justify-content: space-between;
 
-      li {
+      > li {
         // border: 1px solid red;
-        width: 45%;
-        @include flex-col;
-        align-items: center;
+        background-color: #f4f4f4;
+        border-radius: 30px;
+        padding: 25px;
+        @include desktop {
+          padding: 2vw;
+        }
+        width: 48%;
+        @media (max-width: 700px) {
+          width: 100%;
+        }
 
+        @include flex-col;
         margin-bottom: 50px;
         @include desktop {
           margin-bottom: 5vw;
         }
-        &:last-of-type {
-          margin-bottom: 0px;
-        }
 
         img {
-          //border: 1px solid red;
+          // border: 1px solid red;
           width: 25%;
           max-width: 5em;
-
-          margin: 0 0 10px;
+          margin: 10px auto;
           @include desktop {
-            margin: 0 0 1vw;
+            margin: 1vw auto;
           }
         }
 
         h4 {
           // border: 1px solid red;
           @include L;
-          text-align: center;
           @include strong;
           margin: 0 0 10px;
           @include desktop {
@@ -193,14 +194,52 @@ h3 {
 
         p {
           @include S;
+          margin: 0 0 10px;
+          @include desktop {
+            margin: 0 0 1vw;
+          }
         }
 
-        @media (max-width: 500px) {
-          width: 100%;
-          align-items: flex-start;
-          h4 {
-            text-align: left;
+        > ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          > li {
+            background-color: $green;
+            border-radius: 30px;
+            padding: 0.5em 2em;
+            margin: 0 0.5em 0.5em 0;
+            font-weight: 400;
+            &:first-of-type {
+              border: none;
+              background-color: transparent;
+              padding: 0.5em 0 0;
+              font-weight: 800;
+            }
           }
+        }
+      }
+    }
+
+    // What I don't
+    > div {
+      button {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        @include S;
+        margin-bottom: 50px;
+        @include desktop {
+          margin-bottom: 2.5vw;
+        }
+      }
+      p {
+        display: none;
+        &.active {
+          display: block;
+          @include S;
         }
       }
     }
@@ -223,12 +262,14 @@ h3 {
     align-items: center;
     > div {
       position: relative;
-      height: 60vh;
+      height: 50vh;
       width: 300px;
+      border-radius: 25px;
       @include desktop {
         width: 25vw;
       }
       border-radius: 2px;
+      border-radius: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -298,155 +339,46 @@ h3 {
   }
 }
 
-#tools {
-  padding: 100px 0;
-  //border: 1px solid green;
-  > div {
-    @include container;
-  }
-
-  ul {
-    // border: 1px solid red;
-    width: 100%;
-    margin-left: auto;
-    @include flex-row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-
-    @include phone {
-      justify-content: space-around;
-    }
-
-    li {
-      //border: 1px solid red;
-      //border: 1px solid red;
-      @include flex-row;
-      align-items: center;
-      justify-content: flex-start;
-      width: 20%;
-      // @include tablet {
-      //   width: 25%;
-      // }
-      // @include phone {
-      //   width: 50%;
-      // }
-
-      svg {
-        //  @include txt-l;
-        margin: 0 1vw 0 0;
-
-        @include XL;
-      }
-
-      span {
-        @include S;
-        padding: 1vw 0;
-        display: none;
-      }
-    }
-  }
-}
-
 #apps {
-  // border: 1px solid red;
   background-color: $nude;
+  padding: 100px 0;
+  @include desktop {
+    padding: 10vw 0;
+  }
   > div {
     @include container;
-    @include section-padding;
-    @include flex-row;
-    justify-content: space-between;
+    text-align: center;
 
     header {
-      width: 30%;
-    }
-    ul {
-      width: 65%;
-    }
-
-    @include desktop {
-      header {
-        width: 20%;
-      }
-      ul {
-        width: 75%;
-      }
-    }
-  }
-
-  header {
-    // border: 1px solid red;
-    position: sticky;
-    position: -webkit-sticky; /* Safari */
-    height: 50vw;
-    @include tablet {
-      height: 25vw;
-    }
-    @include desktop {
-      height: 20vw;
-    }
-    top: 100px;
-
-    h3 {
-      margin-bottom: 10px;
+      margin-bottom: 25px;
       @include desktop {
         margin-bottom: 1vw;
       }
     }
 
-    > p {
-      @include S;
-    }
-  }
-
-  ul {
-    li {
-      //border-left: 200px solid red;
-      height: 50vw;
-      @include tablet {
-        height: 25vw;
-      }
+    p:first-of-type {
+      font-size: 8rem;
       @include desktop {
-        height: 20vw;
+        font-size: 10vw;
       }
-      h4 {
+      font-weight: 400;
+      span {
+        display: block;
         @include L;
-        @include strong;
-        margin-bottom: 10px;
-        @include desktop {
-          margin-bottom: 0.5vw;
-        }
+        font-weight: 400;
       }
-
-      p {
-        @include S;
-        margin-bottom: 10px;
-        @include desktop {
-          margin-bottom: 0.5vw;
-        }
-        // max-width: 30em;
+      margin-bottom: 25px;
+      @include desktop {
+        margin-bottom: 1vw;
       }
-
-      > div {
-        // border: 1px solid red;
-        display: flex;
-        display: flex;
-        // button {
-        //   @include S;
-        //   @include strong;
-        //   border: 2px solid $green;
-        //   padding: 8px 25px;
-        //   border-radius: 30px;
-        //   &:first-of-type {
-        //     background-color: transparent;
-        //     margin: 0 10px 0 0;
-        //     @include desktop {
-        //       margin: 0 1vw 0 0;
-        //     }
-        //   }
-        //   &:nth-of-type(2) {
-        //     background-color: $green;
-        //   }
-        // }
+    }
+    p:last-of-type {
+      @include S;
+      a {
+        background: linear-gradient(to top, $orange 10%, transparent 10%);
+        &:hover {
+          background: none;
+        }
       }
     }
   }
@@ -458,57 +390,6 @@ h3 {
   }
   to {
     -webkit-transform: rotateZ(360deg);
-  }
-}
-
-#contact {
-  // background-color: $pink;
-  > div {
-    //border: 1px solid red;
-    @include container;
-    padding: 100px 0;
-    @include desktop {
-      padding: 10vw 0;
-    }
-    @include flex-row;
-    justify-content: space-between;
-    > div:first-of-type {
-      width: 70%;
-      p {
-        @include S;
-        margin-bottom: 10px;
-        @include desktop {
-          margin-bottom: 1vw;
-        }
-      }
-
-      ul {
-        li {
-          a {
-            @include XL;
-            @include strong;
-          }
-          span {
-            @include XL;
-            @include strong;
-            //   display: none;
-          }
-        }
-      }
-    }
-
-    // Spinner
-    > div:nth-of-type(2) {
-      border: 1px solid red;
-      width: 100px;
-      height: 100px;
-      background-color: pink;
-      border-radius: 50%;
-      cursor: pointer;
-      a {
-        border: 1px solid red;
-      }
-    }
   }
 }
 

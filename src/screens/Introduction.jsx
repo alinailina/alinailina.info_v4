@@ -6,17 +6,16 @@ const Introduction = () => {
       <div>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,{" "}
-          <span>illum hic ratione rem porro itaque,</span> error assumenda eum
+          <span>illum hic ratione rem porro itaque, error assumenda eum</span>{" "}
           eaque quis cum nemo voluptates exercitationem reprehenderit doloribus
           aliquid molestias necessitatibus corrupti.
         </p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,{" "}
-          <span>illum hic ratione rem porro itaque,</span> error assumenda eum
-          eaque quis cum nemo voluptates exercitationem reprehenderit doloribus
-          aliquid molestias necessitatibus corrupti.
+          illum hic ratione rem porro itaque, error assumenda eum eaque quis cum
+          nemo voluptates exercitationem reprehenderitdoloribus aliquid
+          molestias necessitatibus corrupti.
         </p>
-        <button>Some button</button>
       </div>
     </div>
   );

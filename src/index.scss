@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 @import "fonts";
 @import "mixins";
 @import "components";
@@ -27,6 +28,8 @@ body {
   // background-size: 100% 101px, 101px 100%;
   // background-attachment: fixed;
   background-color: #f4f4f4;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   //background-color: #f2ece4;
 }
 
@@ -68,6 +71,20 @@ code {
   margin: 0;
   box-sizing: border-box;
   font-family: "ITCAvantGardeStd-Bk";
+  font-family: "Open Sans", sans-serif;
   font-weight: 100;
   // scroll-snap-type: y mandatory;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
