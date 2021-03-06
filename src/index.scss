@@ -1,8 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-@import "fonts";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
 @import "mixins";
-@import "components";
-@import "screens";
+
+$yellow: #ffcc00;
+$blue: #007aff;
+$red: #fa3200;
+$gray-S: #f4f4f4;
+$gray-L: #5f6368;
+$gray-M: #dde2e5;
 
 html {
   scroll-behavior: smooth;
@@ -14,52 +19,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background-image: linear-gradient(
-  //     transparent 100px,
-  //     rgba(0, 186, 113, 0.5) 101px,
-  //     transparent 101px
-  //   ),
-  //   linear-gradient(
-  //     90deg,
-  //     transparent 100px,
-  //     rgba(0, 186, 113, 0.5) 101px,
-  //     transparent 101px
-  //   );
-  // background-size: 100% 101px, 101px 100%;
-  // background-attachment: fixed;
-  background-color: #f4f4f4;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  //background-color: #f2ece4;
 }
-
-// $bg-color: white;
-// $dot-color: black;
-
-// // Dimensions
-// $dot-size: 1px;
-// $dot-space: 50px;
-
-// background-color: white;
-// background-image: linear-gradient(
-//     transparent 100px,
-//     $gray3 101px,
-//     transparent 101px
-//   ),
-//   linear-gradient(90deg, transparent 100px, $gray3 101px, transparent 101px);
-// background-size: 100% 101px, 101px 100%;
-// background-attachment: fixed;
-
-// background: linear-gradient(
-//       90deg,
-//       $bg-color ($dot-space - $dot-size),
-//       transparent 1%
-//     )
-//     center,
-//   linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-//   $dot-color;
-// background-size: $dot-space $dot-space;
-// background-attachment: fixed;
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -70,21 +30,627 @@ code {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "ITCAvantGardeStd-Bk";
-  font-family: "Open Sans", sans-serif;
-  font-weight: 100;
-  // scroll-snap-type: y mandatory;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20vh);
-  visibility: hidden;
-  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
-  will-change: opacity, visibility;
+img {
+  width: 100%;
 }
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav {
+  border-bottom: 1px solid $gray-M;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 80px;
+  padding: 0 2vw;
+  display: flex;
+  transition: top 0.25s;
+  transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+
+  // Links
+  > div:first-of-type {
+    // border: 1px solid red;
+    width: 100%;
+    > ul {
+      height: 100%;
+      width: 100%;
+      margin-left: auto;
+      display: flex;
+      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
+
+      > li {
+        padding: 0 25px;
+
+        @include desktop {
+          padding: 0.5vw 2vw;
+        }
+        &:first-of-type {
+          // border: 1px solid red;
+          margin-right: auto;
+          a {
+            display: block;
+            text-align: left;
+            //  border: 1px solid red;
+            width: 100%;
+          }
+        }
+
+        a {
+          // border: 1px solid red;
+          display: block;
+          @include L;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        // Social links
+        &:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Toggle
+  > div:nth-of-type(2) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 500px) {
+    justify-content: flex-end;
+
+    // Links
+    > div:first-of-type {
+      // border: 1px solid red;
+      position: absolute;
+      right: -100%;
+      height: 100vh;
+      width: 100%;
+
+      > ul {
+        background-color: white;
+        padding: 80px 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        > li {
+          // border: 1px solid red;
+          a {
+            @include L;
+            text-align: left;
+            line-height: 2;
+          }
+
+          // Social links
+          &:last-of-type {
+            margin-top: auto;
+            display: block;
+            a {
+              @include S;
+              color: black;
+              text-decoration: underline;
+              &:hover {
+                text-decoration: none;
+              }
+              line-height: 2;
+            }
+          }
+        }
+      }
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    //Toggle
+    > div:nth-of-type(2) {
+      // border: 1px solid red;
+      width: 15%;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .bar {
+        width: 40px;
+        height: 2px;
+        background-color: black;
+        transition: 0.25s ease;
+      }
+
+      .hidden {
+        width: 40px;
+        height: 2px;
+        margin: 5px 0;
+      }
+
+      &.active {
+        .bar {
+          &:first-of-type {
+            -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+            transform: rotate(-45deg) translate(-5px, 5px);
+          }
+          &:last-of-type {
+            -webkit-transform: rotate(45deg) translate(-5px, -5px);
+            transform: rotate(45deg) translate(-5px, -5px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.backToTop {
+  // border: 1px solid red;
+  @include L;
+  position: fixed;
+  right: 4vw;
+  bottom: 3vw;
+  @include phone {
+    bottom: 7vw;
+  }
+
+  svg {
+    fill: black;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+}
+
+#header {
+  height: 100vh;
+  width: 100%;
+
+  // Inner container
+  > div {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    @include flex-center;
+  }
+
+  h1 {
+    @include phone {
+      font-size: 5vw;
+    }
+    @include tablet {
+      font-size: 2rem;
+      max-width: 25em;
+    }
+    @include desktop {
+      font-size: 2.5vw;
+      max-width: 30em;
+    }
+    line-height: 1.5;
+    text-align: center;
+
+    span:first-of-type {
+      color: $red;
+    }
+
+    span {
+      color: $blue;
+      font-family: inherit;
+    }
+  }
+}
+
+#info {
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  @include flex;
+
+  // Img
+  > div:first-of-type {
+    border-right: 1px solid $gray-M;
+    width: 40%;
+    height: 100vh;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    @include flex-center;
+    img {
+      width: 80%;
+    }
+  }
+
+  // Text
+  > div:nth-of-type(2) {
+    // border: 1px solid red;
+    width: 60%;
+    padding: 50px 0;
+    @include desktop {
+      padding: 4vw 0;
+    }
+
+    > div {
+      //border: 1px solid red;
+      width: 90%;
+      margin: 0 auto;
+      > p {
+        @include L;
+        line-height: 1.5;
+        @include mb-L;
+
+        span {
+          color: $blue;
+        }
+      }
+
+      h3 {
+        @include L;
+        @include mb-L;
+      }
+
+      h4 {
+        @include L;
+        font-weight: 400;
+        @include mb-L;
+      }
+
+      // Values
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include mb-L;
+
+        li {
+          width: 45%;
+          @include mb-L;
+
+          h5 {
+            @include L;
+            @include mb-S;
+            color: $blue;
+          }
+
+          p {
+            @include L;
+            line-height: 1.5;
+          }
+        }
+
+        @include tablet {
+          flex-direction: column;
+          li {
+            width: 100%;
+          }
+        }
+
+        @include phone {
+          flex-direction: column;
+          li {
+            width: 100%;
+          }
+        }
+      }
+
+      // What I don't
+      > div {
+        @include mb-L;
+        button {
+          border: none;
+          background-color: transparent;
+          outline: none;
+          -webkit-appearance: none;
+          cursor: pointer;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+          @include L;
+          @include mb-L;
+        }
+        p {
+          display: none;
+          &.active {
+            display: block;
+            @include L;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  @include phone {
+    @include flex-col;
+    padding: 0;
+
+    // Img
+    > div:first-of-type {
+      position: relative;
+      height: 100vw;
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+
+    // Text
+    > div:nth-of-type(2) {
+      width: 100%;
+      > div {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+#apps {
+  .cards {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+
+    // Card
+    > li {
+      @media only screen and (max-width: 550px) {
+        min-width: 100vw;
+      }
+      @media only screen and (min-width: 551px) and (max-width: 768px) {
+        min-width: 80vw;
+      }
+      @media only screen and (min-width: 769px) and (max-width: 1000px) {
+        min-width: 60vw;
+      }
+
+      min-width: 40vw;
+      border-right: 1px solid $gray-M;
+
+      // Inner container
+      > div {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        @include flex-col;
+        cursor: pointer;
+
+        .front {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: white;
+          padding: 25px 0;
+          @include desktop {
+            padding: 2vw 0;
+          }
+          @include flex-col;
+
+          // Inner container
+          > div {
+            width: 85%;
+            height: 100%;
+            margin: 0 auto;
+            @include flex-col;
+
+            // Icon
+            > div:first-of-type {
+              //border: 1px solid red;
+              position: absolute;
+              right: 20px;
+              display: flex;
+              > span {
+                display: block;
+                border: 2px solid;
+                border-radius: 2px;
+                background-color: white;
+                width: 30px;
+                height: 30px;
+                &:nth-of-type(2) {
+                  position: absolute;
+                  top: 0.4em;
+                  right: 0.4em;
+                }
+              }
+
+              @include desktop {
+                right: 2vw;
+                > span {
+                  width: 2.5vw;
+                  height: 2.5vw;
+                  &:nth-of-type(2) {
+                    position: absolute;
+                    top: 0.5em;
+                    right: 0.5em;
+                  }
+                }
+              }
+            }
+
+            // Number
+            > span {
+              display: block;
+              width: 90%;
+              margin: 0 auto;
+              margin: 50px 0;
+              @include desktop {
+                margin: 4vw 0;
+              }
+              font-size: 15vw;
+              @include phone {
+                font-size: 35vw;
+              }
+              @include tablet {
+                font-size: 25vw;
+              }
+              font-weight: 100;
+              text-align: right;
+            }
+
+            // Text
+            > div:nth-of-type(2) {
+              //border: 1px solid red;
+
+              h3 {
+                @include XL;
+                font-weight: 400;
+                @include mb-L;
+              }
+
+              p {
+                @include L;
+                color: $gray-L;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .front {
+            display: none;
+          }
+        }
+
+        .back {
+          height: 100%;
+          background-color: rgba(0, 122, 255, 0.05);
+
+          // Inner container
+          > div {
+            width: 85%;
+            margin: 0 auto;
+            padding: 50px 0;
+            @include desktop {
+              padding: 5vw 0;
+            }
+          }
+
+          h4 {
+            @include L;
+            font-weight: 400;
+            @include mb-S;
+          }
+
+          ul {
+            li {
+              @include S;
+              line-height: 1.5;
+            }
+            @include mb-L;
+          }
+
+          // Links
+          > div {
+            a {
+              @include S;
+              line-height: 1.5;
+              color: black;
+              text-decoration: underline;
+              &:hover {
+                text-decoration: none;
+              }
+              &:first-of-type {
+                margin: 0 25px 0 0;
+                @include desktop {
+                  margin: 0 2vw 0 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#cta {
+  border-top: 1px solid $gray-M;
+  border-bottom: 1px solid $gray-M;
+  height: 100vh;
+  width: 100%;
+
+  @include flex-center;
+
+  p {
+    @include phone {
+      font-size: 5vw;
+    }
+    @include tablet {
+      font-size: 2.25rem;
+      max-width: 30em;
+    }
+    @include desktop {
+      font-size: 2.5vw;
+      max-width: 40em;
+    }
+    line-height: 1.5;
+    text-align: center;
+    span:first-of-type {
+      color: $blue;
+    }
+    span:nth-of-type(2) {
+      color: $red;
+    }
+  }
+}
+
+footer {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+  @include desktop {
+    padding: 4vw 0;
+  }
+
+  > div {
+    //border: 1px solid red;
+    width: 90%;
+    margin: 0 auto;
+    @include flex-row;
+    justify-content: flex-end;
+    @include mb-L;
+
+    ul {
+      li {
+        a {
+          @include S;
+          color: black;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    ul:first-of-type {
+      width: 30%;
+      @include phone {
+        width: 50%;
+      }
+    }
+  }
+
+  // Copyright
+  > p {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    @include S;
+    svg {
+      color: $red;
+      position: relative;
+      top: 0.1em;
+    }
+  }
 }

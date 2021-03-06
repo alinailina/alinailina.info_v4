@@ -4,11 +4,9 @@ const Header = () => {
   return (
     <header id="header">
       <div>
-        <p>Alina Ilina</p>
-
         <h1>
-          Full Stack Developer, <br />
-          &#10005;<span> UI Imagineer</span> &mdash; Helsinki, Finland
+          I&apos;m Alina, a <span>web developer and UI designer</span>, who
+          strikes a balance between <span>simple and considered</span> outcomes.
         </h1>
       </div>
     </header>
