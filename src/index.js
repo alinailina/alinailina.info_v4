@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.scss";
 
+//import Parent from "./screens/Parent";
+
 import Navbar from "./components/Navbar";
 import Header from "./screens/Header";
 import Info from "./screens/Info";
@@ -14,6 +16,7 @@ import BackToTop from "./components/BackToTop";
 
 ReactDOM.render(
   <Router>
+    {/* <Parent /> */}
     <Navbar />
     <Header />
     <Info />

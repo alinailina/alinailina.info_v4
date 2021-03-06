@@ -22,13 +22,11 @@ const Footer = () => {
           <li>
             <a href="/">Instagram</a>
           </li>
-
           <li>
             <a href="/">Github</a>
           </li>
         </ul>
       </div>
-
       <p>© 2021 &mdash; Designed and developed by Alina Ilina</p>
     </footer>
   );

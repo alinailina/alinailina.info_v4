@@ -48,14 +48,11 @@ const Info = () => {
           </p>
           <h4>I design</h4>
           <p>
-            No need to reinvent the UI wheel - I look at what others are doing
-            right, and combine those <span>proven design patterns</span> with
-            20% of my <span>unique spin</span>.
+            I don’t reinvent the UI wheel. Instead, I look at what others are
+            doing right, and combine those <span>proven design patterns</span>{" "}
+            with 20% of my <span>unique spin</span>.
           </p>
-          <p>
-            I believe a clever mix of typography and whitespaces is a design in
-            and of itself, and never go for complexity without reason.
-          </p>
+
           <h4>I value</h4>
           <ul>
             <li>

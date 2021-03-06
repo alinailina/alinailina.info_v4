@@ -285,6 +285,9 @@ nav {
       margin: 0 auto;
       > p {
         @include L;
+        @include phone {
+          @include S;
+        }
         line-height: 1.5;
         @include mb-L;
 
@@ -295,11 +298,17 @@ nav {
 
       h3 {
         @include L;
+        @include phone {
+          @include S;
+        }
         @include mb-L;
       }
 
       h4 {
         @include L;
+        @include phone {
+          @include S;
+        }
         font-weight: 400;
         @include mb-L;
       }
@@ -317,12 +326,18 @@ nav {
 
           h5 {
             @include L;
+            @include phone {
+              @include S;
+            }
             @include mb-S;
             color: $blue;
           }
 
           p {
             @include L;
+            @include phone {
+              @include S;
+            }
             line-height: 1.5;
           }
         }
@@ -356,6 +371,9 @@ nav {
             text-decoration: none;
           }
           @include L;
+          @include phone {
+            @include S;
+          }
           @include mb-L;
         }
         p {
@@ -423,108 +441,78 @@ nav {
         position: relative;
         height: 100vh;
         width: 100%;
+        background-color: white;
         @include flex-col;
-        cursor: pointer;
-
-        .front {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background-color: white;
-          padding: 25px 0;
-          @include desktop {
-            padding: 2vw 0;
-          }
-          @include flex-col;
-
-          // Inner container
-          > div {
-            width: 85%;
-            height: 100%;
-            margin: 0 auto;
-            @include flex-col;
-
-            // Icon
-            > div:first-of-type {
-              //border: 1px solid red;
-              position: absolute;
-              right: 20px;
-              display: flex;
-              > span {
-                display: block;
-                border: 2px solid;
-                border-radius: 2px;
-                background-color: white;
-                width: 30px;
-                height: 30px;
-                &:nth-of-type(2) {
-                  position: absolute;
-                  top: 0.4em;
-                  right: 0.4em;
-                }
-              }
-
-              @include desktop {
-                right: 2vw;
-                > span {
-                  width: 2.5vw;
-                  height: 2.5vw;
-                  &:nth-of-type(2) {
-                    position: absolute;
-                    top: 0.5em;
-                    right: 0.5em;
-                  }
-                }
-              }
-            }
-
-            // Number
-            > span {
-              display: block;
-              width: 90%;
-              margin: 0 auto;
-              margin: 50px 0;
-              @include desktop {
-                margin: 4vw 0;
-              }
-              font-size: 15vw;
-              @include phone {
-                font-size: 35vw;
-              }
-              @include tablet {
-                font-size: 25vw;
-              }
-              font-weight: 100;
-              text-align: right;
-            }
-
-            // Text
-            > div:nth-of-type(2) {
-              //border: 1px solid red;
-
-              h3 {
-                @include XL;
-                font-weight: 400;
-                @include mb-L;
-              }
-
-              p {
-                @include L;
-                color: $gray-L;
-              }
-            }
-          }
+        padding: 25px;
+        @include desktop {
+          padding: 2vw;
         }
 
-        &:hover {
-          .front {
+        // Number
+        > span {
+          display: block;
+          width: 80%;
+          margin: 25px auto;
+          @include phone {
+            font-size: 35vw;
+          }
+          @include tablet {
+            font-size: 25vw;
+          }
+          @include desktop {
+            margin: 2vw auto;
+            font-size: 15vw;
+          }
+          font-weight: 100;
+          text-align: right;
+        }
+
+        // Title
+        h3 {
+          @include XL;
+          font-weight: 400;
+          @include mb-L;
+        }
+
+        // Description
+        p {
+          @include L;
+          @include phone {
+            @include S;
+          }
+          @include mb-L;
+        }
+
+        // View details
+        > button {
+          border: none;
+          background-color: transparent;
+          outline: none;
+          -webkit-appearance: none;
+          cursor: pointer;
+          @include S;
+          align-self: start;
+          //margin: auto 0 25px 0;
+          // align-self: flex-end;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+          svg {
+            position: relative;
+            top: 0.1em;
             display: none;
           }
         }
 
-        .back {
+        .modal {
+          width: 100%;
           height: 100%;
-          background-color: rgba(0, 122, 255, 0.05);
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background-color: white;
 
           // Inner container
           > div {
@@ -532,10 +520,23 @@ nav {
             margin: 0 auto;
             padding: 50px 0;
             @include desktop {
-              padding: 5vw 0;
+              padding: 4vw 0;
             }
+            @include flex-col;
           }
 
+          // Close
+          button {
+            align-self: flex-end;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            @include XL;
+          }
+
+          // Features, tools
           h4 {
             @include L;
             font-weight: 400;
@@ -613,17 +614,21 @@ footer {
   }
 
   > div {
-    //border: 1px solid red;
+    // border: 1px solid red;
     width: 90%;
     margin: 0 auto;
     @include flex-row;
     justify-content: flex-end;
-    @include mb-L;
+    @include mb-XL;
 
     ul {
       li {
+        line-height: 1.5;
         a {
           @include S;
+          @include phone {
+            @include XS;
+          }
           color: black;
           text-decoration: none;
           &:hover {
@@ -636,8 +641,12 @@ footer {
     ul:first-of-type {
       width: 30%;
       @include phone {
-        width: 50%;
+        flex: 1;
       }
+    }
+
+    @include phone {
+      justify-content: space-between;
     }
   }
 
@@ -647,6 +656,9 @@ footer {
     width: 90%;
     margin: 0 auto;
     @include S;
+    @include phone {
+      @include XS;
+    }
     svg {
       color: $red;
       position: relative;

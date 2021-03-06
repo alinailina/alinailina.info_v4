@@ -87,12 +87,13 @@
 
 @mixin L {
   font-size: 1.5rem;
+
   @include tablet {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   @include desktop {
-    font-size: 2vw;
+    font-size: 1.75vw;
   }
 }
 @mixin XL {
@@ -127,6 +128,13 @@
   margin-bottom: 25px;
   @include desktop {
     margin-bottom: 2vw;
+  }
+}
+
+@mixin mb-XL {
+  margin-bottom: 50px;
+  @include desktop {
+    margin-bottom: 4vw;
   }
 }
 
