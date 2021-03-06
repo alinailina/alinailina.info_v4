@@ -17,28 +17,16 @@
   }
 }
 
-@mixin container {
-  margin: 0 auto;
-  width: 80%;
-
-  @include phone {
-    width: 90%;
-  }
-}
-
 // Flex containers
-@mixin flex-col {
-  display: flex;
-  flex-direction: column;
-}
 
-@mixin flex-row {
-  display: flex;
-  flex-direction: row;
-}
 @mixin flex {
   display: flex;
   flex-direction: row;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin flex-center {
@@ -54,12 +42,7 @@
   align-items: center;
 }
 
-@mixin box-shadow {
-  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.1), 0 3px 4px 0 rgba(0, 0, 0, 0.1),
-    0 1px 8px 0 rgba(0, 0, 0, 0.1);
-}
-
-// Texts
+// Font sizes
 
 @mixin XS {
   font-size: 1.1rem;
@@ -96,6 +79,7 @@
     font-size: 1.75vw;
   }
 }
+
 @mixin XL {
   font-size: 2rem;
   @include tablet {
@@ -107,16 +91,7 @@
   }
 }
 
-@mixin XXL {
-  font-size: 3rem;
-  @include tablet {
-    font-size: 4rem;
-  }
-  @include desktop {
-    font-size: 6vw;
-  }
-}
-
+// Utilities
 @mixin mb-S {
   margin-bottom: 10px;
   @include desktop {
@@ -140,8 +115,4 @@
 
 @mixin underline {
   background: linear-gradient(to top, #007aff 5%, transparent 5%);
-}
-
-@mixin highlight {
-  background: linear-gradient(to top, #fa3200 10%, transparent 10%);
 }

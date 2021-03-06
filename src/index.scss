@@ -222,23 +222,25 @@ nav {
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    @include flex-center;
+    @include flex;
+    align-items: flex-end;
   }
 
   h1 {
+    line-height: 1.5;
+    margin-bottom: 100px;
+
     @include phone {
-      font-size: 5vw;
-    }
-    @include tablet {
       font-size: 2rem;
-      max-width: 25em;
+    }
+
+    @include tablet {
+      font-size: 3rem;
     }
     @include desktop {
-      font-size: 2.5vw;
-      max-width: 30em;
+      font-size: 4vw;
+      margin-bottom: 5vw;
     }
-    line-height: 1.5;
-    text-align: center;
 
     span:first-of-type {
       color: $red;
@@ -247,6 +249,12 @@ nav {
     span {
       color: $blue;
       font-family: inherit;
+    }
+
+    br {
+      @media only screen and (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 }
@@ -301,14 +309,6 @@ nav {
         @include phone {
           @include S;
         }
-        @include mb-L;
-      }
-
-      h4 {
-        @include L;
-        @include phone {
-          @include S;
-        }
         font-weight: 400;
         @include mb-L;
       }
@@ -324,7 +324,7 @@ nav {
           width: 45%;
           @include mb-L;
 
-          h5 {
+          h4 {
             @include L;
             @include phone {
               @include S;
@@ -452,24 +452,29 @@ nav {
         > span {
           display: block;
           width: 80%;
-          margin: 25px auto;
+          margin: 50px auto;
           @include phone {
-            font-size: 35vw;
+            font-size: 12.5rem;
           }
           @include tablet {
-            font-size: 25vw;
+            font-size: 15rem;
           }
           @include desktop {
-            margin: 2vw auto;
+            margin: 4vw auto;
             font-size: 15vw;
           }
+          color: $blue;
           font-weight: 100;
           text-align: right;
+          span {
+            font-weight: 400;
+            font-size: 0.25em;
+          }
         }
 
         // Title
         h3 {
-          @include XL;
+          @include L;
           font-weight: 400;
           @include mb-L;
         }
@@ -477,6 +482,7 @@ nav {
         // Description
         p {
           @include L;
+          line-height: 1.5;
           @include phone {
             @include S;
           }
@@ -581,22 +587,32 @@ nav {
   height: 100vh;
   width: 100%;
 
-  @include flex-center;
+  // Inner container
+  > div {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    @include flex;
+    align-items: center;
+  }
 
   p {
     @include phone {
-      font-size: 5vw;
+      font-size: 2rem;
+      br:last-of-type {
+        display: none;
+      }
     }
     @include tablet {
-      font-size: 2.25rem;
-      max-width: 30em;
+      font-size: 3rem;
+      //max-width: 25em;
     }
     @include desktop {
-      font-size: 2.5vw;
-      max-width: 40em;
+      font-size: 4vw;
+      // max-width: 30em;
     }
     line-height: 1.5;
-    text-align: center;
+    //text-align: center;
     span:first-of-type {
       color: $blue;
     }
@@ -617,7 +633,7 @@ footer {
     // border: 1px solid red;
     width: 90%;
     margin: 0 auto;
-    @include flex-row;
+    @include flex;
     justify-content: flex-end;
     @include mb-XL;
 

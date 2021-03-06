@@ -2,8 +2,6 @@ import React from "react";
 import { RiCloseFill } from "react-icons/ri";
 
 const Modal = ({ active, toggleActive, app }) => {
-  console.log(active);
-
   const { features, tools, github, website } = app;
 
   if (active === false) {
