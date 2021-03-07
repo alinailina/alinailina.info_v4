@@ -260,8 +260,8 @@ nav {
 }
 
 #info {
-  border-top: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
+  border-top: 1px solid $gray-M;
+  border-bottom: 1px solid $gray-M;
   @include flex;
 
   // Img
@@ -273,8 +273,17 @@ nav {
     position: -webkit-sticky;
     top: 0;
     @include flex-center;
-    img {
-      width: 80%;
+
+    div {
+      border: 1px solid $blue;
+      border-radius: 30px;
+      height: 40%;
+      width: 90%;
+      @include flex-center;
+      svg {
+        font-size: 4rem;
+        // color: $blue;
+      }
     }
   }
 
@@ -301,6 +310,7 @@ nav {
 
         span {
           color: $blue;
+          font-weight: 400;
         }
       }
 
@@ -331,6 +341,7 @@ nav {
             }
             @include mb-S;
             color: $blue;
+            font-weight: 400;
           }
 
           p {
@@ -443,16 +454,18 @@ nav {
         width: 100%;
         background-color: white;
         @include flex-col;
-        padding: 25px;
+
+        padding: 50px 25px;
         @include desktop {
-          padding: 2vw;
+          padding: 4vw 2vw;
         }
 
-        // Number
+        //Number
         > span {
           display: block;
-          width: 80%;
-          margin: 50px auto;
+          width: 100%;
+          height: 40%;
+          @include flex-center;
           @include phone {
             font-size: 12.5rem;
           }
@@ -460,54 +473,54 @@ nav {
             font-size: 15rem;
           }
           @include desktop {
-            margin: 4vw auto;
-            font-size: 15vw;
+            font-size: 12.5vw;
           }
-          color: $blue;
           font-weight: 100;
-          text-align: right;
-          span {
+          // color: $blue;
+          border: 1px solid $blue;
+          border-radius: 30px;
+          margin-bottom: 50px;
+        }
+
+        > div {
+          z-index: 1;
+          // Title
+          h3 {
+            @include XL;
             font-weight: 400;
-            font-size: 0.25em;
+            @include mb-L;
           }
-        }
 
-        // Title
-        h3 {
-          @include L;
-          font-weight: 400;
-          @include mb-L;
-        }
+          // Description
+          p {
+            @include L;
+            line-height: 1.5;
+            @include phone {
+              @include S;
+            }
+            @include mb-L;
+          }
 
-        // Description
-        p {
-          @include L;
-          line-height: 1.5;
-          @include phone {
+          // View details
+          > button {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
             @include S;
-          }
-          @include mb-L;
-        }
-
-        // View details
-        > button {
-          border: none;
-          background-color: transparent;
-          outline: none;
-          -webkit-appearance: none;
-          cursor: pointer;
-          @include S;
-          align-self: start;
-          //margin: auto 0 25px 0;
-          // align-self: flex-end;
-          text-decoration: underline;
-          &:hover {
-            text-decoration: none;
-          }
-          svg {
-            position: relative;
-            top: 0.1em;
-            display: none;
+            align-self: start;
+            //margin: auto 0 25px 0;
+            // align-self: flex-end;
+            text-decoration: underline;
+            // text-decoration: none;
+            &:hover {
+              text-decoration: none;
+            }
+            // border: 1px solid $blue;
+            // padding: 0.5em 1em;
+            // border-radius: 30px;
+            //background-color: #f4f4f4;
           }
         }
 
@@ -550,9 +563,16 @@ nav {
           }
 
           ul {
+            display: flex;
+            flex-wrap: wrap;
             li {
               @include S;
               line-height: 1.5;
+              //border: 1px solid $blue;
+              background-color: #f4f4f4;
+              margin: 0 0.5em 0.5em 0;
+              border-radius: 30px;
+              padding: 0.25em 0.5em;
             }
             @include mb-L;
           }
@@ -583,7 +603,6 @@ nav {
 
 #cta {
   border-top: 1px solid $gray-M;
-  border-bottom: 1px solid $gray-M;
   height: 100vh;
   width: 100%;
 
@@ -656,13 +675,30 @@ footer {
 
     ul:first-of-type {
       width: 30%;
-      @include phone {
-        flex: 1;
-      }
     }
 
     @include phone {
-      justify-content: space-between;
+    }
+
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+      @include mb-L;
+      ul {
+        text-align: center;
+      }
+      ul:first-of-type {
+        width: 60%;
+        @include mb-L;
+      }
+      ul:nth-of-type(2) {
+        // min-width: 80%;
+        display: flex;
+        justify-content: space-between;
+        li {
+          margin: 0 25px;
+        }
+      }
     }
   }
 
@@ -679,6 +715,10 @@ footer {
       color: $red;
       position: relative;
       top: 0.1em;
+    }
+    @media only screen and (max-width: 500px) {
+      text-align: center;
+      line-height: 1.5;
     }
   }
 }

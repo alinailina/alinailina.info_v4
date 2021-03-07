@@ -16,13 +16,13 @@ const Modal = ({ active, toggleActive, app }) => {
         <h4>Features</h4>
         <ul>
           {features.map((feature) => (
-            <li key={feature}>- {feature}</li>
+            <li key={feature}>{feature}</li>
           ))}
         </ul>
         <h4>Tools</h4>
         <ul>
           {tools.map((tool) => (
-            <li key={tool}>- {tool}</li>
+            <li key={tool}>{tool}</li>
           ))}
         </ul>
         <div>

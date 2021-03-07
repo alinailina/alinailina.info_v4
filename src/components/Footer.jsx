@@ -27,7 +27,10 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <p>© 2021 &mdash; Designed and developed by Alina Ilina</p>
+      <p>
+        © 2021 <br />
+        Designed and developed by Alina Ilina
+      </p>
     </footer>
   );
 };
