@@ -13,14 +13,14 @@ const Modal = ({ active, toggleActive, app }) => {
         <button onClick={toggleActive}>
           <RiCloseFill />
         </button>
-        <h4>Features</h4>
         <ul>
+          <li>Features:</li>
           {features.map((feature) => (
             <li key={feature}>{feature}</li>
           ))}
         </ul>
-        <h4>Tools</h4>
         <ul>
+          <li>Tools:</li>
           {tools.map((tool) => (
             <li key={tool}>{tool}</li>
           ))}

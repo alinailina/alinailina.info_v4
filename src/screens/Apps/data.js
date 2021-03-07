@@ -2,7 +2,7 @@ const apps = [
   {
     title: "The Shortcut",
     description:
-      "New improved website for the largest talent accelerator in the Nordics. ",
+      "New improved website for the largest talent accelerator in the Nordics 🙌 ",
     features: [
       "Responsive layout",
       "Subnavigation",
@@ -22,12 +22,11 @@ const apps = [
     ],
     github: "https://alinailina.info/",
     website: "https://alinailina.info/",
-    img: "",
   },
   {
     title: "Portfolio app",
     description:
-      "My personal website is built with only a few components and minimum use of other libraries.",
+      "My portfolio app is built with only a few components and minimum use of other libraries 💅",
     features: [
       "Responsive layout",
       "Hide navigation on scroll",
@@ -41,7 +40,7 @@ const apps = [
   },
   {
     title: "Emoji store",
-    description: "Practice app to show proficiency in relevant technologies.",
+    description: "Practice app to show proficiency in relevant technologies 💪",
     features: [
       "API interaction",
       "Search",
@@ -59,22 +58,8 @@ const apps = [
   {
     title: "Fruitmart",
     description: "Practice app to show proficiency in relevant technologies.",
-    features: [
-      "Responsive layout",
-      "Subnavigation",
-      "Accordion",
-      "API interaction",
-      "Skeleton sreens",
-      "Search",
-      "Pagination",
-    ],
-    tools: [
-      "React",
-      "SASS",
-      "Wordpress as a headless CMS",
-      "Eventbrite API",
-      "Mapbox API",
-    ],
+    features: [],
+    tools: [],
     github: "https://alinailina.info/",
     website: "https://alinailina.info/",
   },

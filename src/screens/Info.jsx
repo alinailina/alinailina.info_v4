@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { RiPlayMiniFill } from "react-icons/ri";
 
 const Info = () => {
   const [active, setActive] = useState(false);
@@ -16,38 +15,34 @@ const Info = () => {
 
   return (
     <section id="info">
-      <div>
-        <div>
-          <RiPlayMiniFill />
-        </div>
+      <div id="skills">
+        <ul>
+          <li>
+            <h3>I develop 👌</h3>
+            <p>
+              I work with React and it’s ecosystem. My primary focus is on
+              building <span>single page React applications</span> with
+              Node/Express API on the back end.
+            </p>
+          </li>
+          <li>
+            <h3>I design 💅</h3>
+            <p>
+              I believe <span>attractive things work better</span> and pay a lot
+              of attention to aesthetics and clarity.
+            </p>
+            <p>
+              My strong interest in usability and interaction design informs my
+              work as a developer and designer. I look at what others are doing
+              right, and combine those <span>proven design patterns</span> with
+              20% of my <span>unique spin</span>.
+            </p>
+          </li>
+        </ul>
       </div>
-      <div>
+      <div id="values">
         <div>
-          <p>
-            I enjoy building front-end architecture, component libraries, and
-            design systems. My strong interest in usability and interaction
-            design informs my work as a developer and designer. I believe{" "}
-            <span>attractive things work better</span> and pay a lot of
-            attention to aesthetics and clarity.{" "}
-          </p>
-          <p>
-            As a <span>self-taught professional</span>, I’m driven by an
-            unquenchable desire to learn and challenge my status quo.
-          </p>
-          <h3>I develop</h3>
-          <p>
-            I work with React and it’s ecosystem. My primary focus is on
-            building <span>single page React applications</span> with
-            Node/Express API on the back end.
-          </p>
-          <h3>I design</h3>
-          <p>
-            I don’t reinvent the UI wheel. Instead, I look at what others are
-            doing right, and combine those <span>proven design patterns</span>{" "}
-            with 20% of my <span>unique spin</span>.
-          </p>
-
-          <h3>I value</h3>
+          <h3>I value 🙏</h3>
           <ul>
             <li>
               <h4>Simplicity</h4>
@@ -86,29 +81,27 @@ const Info = () => {
                 way.
               </p>
             </li>
+            <li className="empty-flex-item"></li>
           </ul>
-          <div>
-            <button ref={titleRef} onClick={toogleActive}>
-              <h3>What I don&apos;t</h3>
-            </button>
-            <p ref={contentRef} className={active ? "active" : " "}>
-              Like mess. Wash whites with colours. Mind the gap. Take sugar with
-              coffee. Go chasing waterfalls. Want to buy a plastic bag.
-              Understand how or why pork gets pulled. Enjoy speed driving.
-              Always say the right thing at the right time. Want fries with
-              that. Stretch before exercising. Smoke. Stretch after exercising.
-              Dance often enough. Stop believing. Settle.
-            </p>
-          </div>
-          <h3>My happy place</h3>
-          <p>
-            I would fit very comfortably in a{" "}
-            <span> cross-functional team</span> of developers, product managers,
-            and designers delivering ethically-minded end-to-end software
-            solutions.
-          </p>
         </div>
       </div>
+      <div id="lol">
+        <button ref={titleRef} onClick={toogleActive}>
+          What I don&apos;t
+        </button>
+        <p ref={contentRef} className={active ? "active" : " "}>
+          Like mess. Wash whites with colours. Mind the gap. Take sugar with
+          coffee. Go chasing waterfalls. Want to buy a plastic bag. Understand
+          how or why pork gets pulled. Enjoy speed driving. Always say the right
+          thing at the right time. Want fries with that. Stretch before
+          exercising. Smoke. Stretch after exercising. Dance often enough. Stop
+          believing. Settle.
+        </p>
+      </div>
+      <h3>
+        As a <span>self-taught professional</span>, I’m driven by an
+        unquenchable desire to learn and <span>challengemy status quo</span> 🚀
+      </h3>
     </section>
   );
 };

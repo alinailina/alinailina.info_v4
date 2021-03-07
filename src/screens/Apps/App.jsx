@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { BsThreeDots } from "react-icons/bs";
 
 const App = ({ app, i }) => {
   const [active, setActive] = useState(false);
@@ -7,17 +8,19 @@ const App = ({ app, i }) => {
     setActive(!active);
   };
   const { title, description } = app;
+
   return (
     <li>
       <div>
-        <span>{i + 1}</span>
+        <div>
+          <BsThreeDots /> <span>0{i + 1}</span>
+        </div>
         <div>
           <h3>{title}</h3>
           <p>{description}</p>
           <button onClick={toggleActive}>View details</button>
+          <Modal active={active} toggleActive={toggleActive} app={app} />
         </div>
-
-        <Modal active={active} toggleActive={toggleActive} app={app} />
       </div>
     </li>
   );

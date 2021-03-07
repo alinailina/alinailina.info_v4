@@ -87,7 +87,18 @@
   }
 
   @include desktop {
-    font-size: 2.5vw;
+    font-size: 3vw;
+  }
+}
+
+@mixin XXL {
+  font-size: 3rem;
+  @include tablet {
+    font-size: 4rem;
+  }
+
+  @include desktop {
+    font-size: 4vw;
   }
 }
 
@@ -115,4 +126,22 @@
 
 @mixin underline {
   background: linear-gradient(to top, #007aff 5%, transparent 5%);
+}
+
+@mixin link {
+  color: black;
+  text-decoration: underline;
+  &:hover {
+    color: $blue;
+    text-decoration: none;
+  }
+  transition: all 0.25s ease;
+}
+
+@mixin container {
+  width: 80%;
+  margin: 0 auto;
+  @include phone {
+    width: 90%;
+  }
 }

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
-
 @import "mixins";
 
 $yellow: #ffcc00;
@@ -44,7 +43,7 @@ ul {
 }
 
 nav {
-  border-bottom: 1px solid $gray-M;
+  // border-bottom: 1px solid $gray-M;
   background-color: white;
   position: fixed;
   z-index: 1;
@@ -222,25 +221,13 @@ nav {
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    @include flex;
-    align-items: flex-end;
+    @include flex-center;
   }
 
   h1 {
     line-height: 1.5;
-    margin-bottom: 100px;
-
-    @include phone {
-      font-size: 2rem;
-    }
-
-    @include tablet {
-      font-size: 3rem;
-    }
-    @include desktop {
-      font-size: 4vw;
-      margin-bottom: 5vw;
-    }
+    text-align: center;
+    @include XL;
 
     span:first-of-type {
       color: $red;
@@ -260,78 +247,74 @@ nav {
 }
 
 #info {
-  border-top: 1px solid $gray-M;
-  border-bottom: 1px solid $gray-M;
-  @include flex;
+  padding: 0 0 100px 0;
+  @include desktop {
+    padding: 0 0 10vw 0;
+  }
 
-  // Img
-  > div:first-of-type {
-    border-right: 1px solid $gray-M;
-    width: 40%;
-    height: 100vh;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    @include flex-center;
+  #skills {
+    @include mb-L;
+    ul {
+      @include container;
+      @include flex;
+      justify-content: space-between;
+      li {
+        width: 45%;
+        h3 {
+          @include XXL;
+          font-weight: 400;
+          @include mb-XL;
+        }
 
-    div {
-      border: 1px solid $blue;
-      border-radius: 30px;
-      height: 40%;
-      width: 90%;
-      @include flex-center;
-      svg {
-        font-size: 4rem;
-        // color: $blue;
+        p {
+          @include L;
+          @include phone {
+            @include S;
+          }
+          line-height: 1.5;
+          @include mb-S;
+          span {
+            color: $blue;
+          }
+        }
+      }
+      @include phone {
+        @include flex-col;
+        li {
+          width: 100%;
+          &:first-of-type {
+            @include mb-XL;
+          }
+        }
       }
     }
   }
 
-  // Text
-  > div:nth-of-type(2) {
-    // border: 1px solid red;
-    width: 60%;
-    padding: 50px 0;
-    @include desktop {
-      padding: 4vw 0;
-    }
-
+  #values {
     > div {
-      //border: 1px solid red;
-      width: 90%;
-      margin: 0 auto;
-      > p {
-        @include L;
-        @include phone {
-          @include S;
-        }
-        line-height: 1.5;
-        @include mb-L;
-
-        span {
-          color: $blue;
-          font-weight: 400;
-        }
-      }
+      @include container;
 
       h3 {
-        @include L;
-        @include phone {
-          @include S;
-        }
+        @include XL;
         font-weight: 400;
-        @include mb-L;
+        @include mb-XL;
       }
 
       // Values
       ul {
-        display: flex;
+        @include flex;
         flex-wrap: wrap;
         justify-content: space-between;
         @include mb-L;
 
         li {
-          width: 45%;
+          width: 30%;
+          @include tablet {
+            width: 45%;
+          }
+          @include phone {
+            width: 100%;
+          }
           @include mb-L;
 
           h4 {
@@ -341,7 +324,6 @@ nav {
             }
             @include mb-S;
             color: $blue;
-            font-weight: 400;
           }
 
           p {
@@ -353,139 +335,150 @@ nav {
           }
         }
 
-        @include tablet {
-          flex-direction: column;
-          li {
-            width: 100%;
-          }
-        }
-
         @include phone {
-          flex-direction: column;
-          li {
-            width: 100%;
-          }
         }
       }
 
-      // What I don't
-      > div {
-        @include mb-L;
-        button {
-          border: none;
-          background-color: transparent;
-          outline: none;
-          -webkit-appearance: none;
-          cursor: pointer;
-          text-decoration: underline;
-          &:hover {
-            text-decoration: none;
-          }
-          @include L;
-          @include phone {
-            @include S;
-          }
-          @include mb-L;
+      > p {
+        @include L;
+        @include phone {
+          @include S;
         }
-        p {
-          display: none;
-          &.active {
-            display: block;
-            @include L;
-            line-height: 1.5;
-          }
+        line-height: 1.5;
+        span {
+          color: $blue;
         }
       }
     }
   }
 
-  @include phone {
-    @include flex-col;
-    padding: 0;
-
-    // Img
-    > div:first-of-type {
-      position: relative;
-      height: 100vw;
-      width: 100%;
-      overflow: hidden;
-      img {
-        width: 100%;
+  #lol {
+    @include container;
+    @include mb-L;
+    button {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+      @include L;
+      @include phone {
+        @include S;
+      }
+      @include mb-L;
+    }
+    p {
+      display: none;
+      &.active {
+        display: block;
+        @include L;
+        line-height: 1.5;
+        @include mb-XL;
       }
     }
+  }
 
-    // Text
-    > div:nth-of-type(2) {
-      width: 100%;
-      > div {
-        width: 90%;
-        margin: 0 auto;
-      }
+  > h3 {
+    display: block;
+    @include container;
+    @include XL;
+    //font-weight: 400;
+    span:first-of-type {
+      color: $red;
+    }
+
+    span {
+      color: $blue;
+      font-family: inherit;
     }
   }
 }
 
 #apps {
+  // border: 1px solid;
   .cards {
     position: relative;
     height: 100vh;
     width: 100vw;
+    background-color: $gray-S;
     display: flex;
+    @include desktop {
+      padding: 0 0 0 4vw;
+    }
 
     // Card
     > li {
+      // border: 1px solid red;
+      background-color: $gray-S;
+      display: flex;
+      align-items: flex-end;
+      min-width: 60vw;
+
+      > div {
+        position: relative;
+        height: 80%;
+        width: 80%;
+        margin: 0 auto 50px;
+      }
+
       @media only screen and (max-width: 550px) {
         min-width: 100vw;
+        > div {
+          width: 90%;
+        }
       }
       @media only screen and (min-width: 551px) and (max-width: 768px) {
         min-width: 80vw;
+        > div {
+          width: 90%;
+        }
       }
       @media only screen and (min-width: 769px) and (max-width: 1000px) {
-        min-width: 60vw;
+        min-width: 80vw;
+        > div {
+          width: 80%;
+        }
       }
 
-      min-width: 40vw;
-      border-right: 1px solid $gray-M;
-
-      // Inner container
-      > div {
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        background-color: white;
-        @include flex-col;
-
-        padding: 50px 25px;
-        @include desktop {
-          padding: 4vw 2vw;
-        }
-
-        //Number
-        > span {
-          display: block;
-          width: 100%;
-          height: 40%;
-          @include flex-center;
-          @include phone {
-            font-size: 12.5rem;
-          }
-          @include tablet {
-            font-size: 15rem;
-          }
-          @include desktop {
-            font-size: 12.5vw;
-          }
-          font-weight: 100;
-          // color: $blue;
-          border: 1px solid $blue;
-          border-radius: 30px;
-          margin-bottom: 50px;
-        }
-
+      @include desktop {
+        min-width: 40vw;
         > div {
-          z-index: 1;
+          width: 80%;
+        }
+      }
+
+      > div {
+        background-color: white;
+        border-radius: 30px;
+
+        // Graphic
+        > div:first-of-type {
+          height: 15%;
+          background-color: $yellow;
+          border-radius: 30px 30px 0 0;
+
+          @include flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 25px;
+          svg {
+            @include XL;
+          }
+          span {
+            @include L;
+            font-weight: 400;
+          }
+        }
+
+        > div:nth-of-type(2) {
+          padding: 25px;
           // Title
           h3 {
+            //color: $blue;
             @include XL;
             font-weight: 400;
             @include mb-L;
@@ -509,18 +502,8 @@ nav {
             -webkit-appearance: none;
             cursor: pointer;
             @include S;
+            @include link;
             align-self: start;
-            //margin: auto 0 25px 0;
-            // align-self: flex-end;
-            text-decoration: underline;
-            // text-decoration: none;
-            &:hover {
-              text-decoration: none;
-            }
-            // border: 1px solid $blue;
-            // padding: 0.5em 1em;
-            // border-radius: 30px;
-            //background-color: #f4f4f4;
           }
         }
 
@@ -532,15 +515,13 @@ nav {
           left: 0;
           height: 100%;
           background-color: white;
+          border-radius: 30px;
+          padding: 25px;
 
           // Inner container
           > div {
-            width: 85%;
+            width: 95%;
             margin: 0 auto;
-            padding: 50px 0;
-            @include desktop {
-              padding: 4vw 0;
-            }
             @include flex-col;
           }
 
@@ -555,24 +536,23 @@ nav {
             @include XL;
           }
 
-          // Features, tools
-          h4 {
-            @include L;
-            font-weight: 400;
-            @include mb-S;
-          }
-
           ul {
             display: flex;
             flex-wrap: wrap;
             li {
               @include S;
-              line-height: 1.5;
-              //border: 1px solid $blue;
-              background-color: #f4f4f4;
-              margin: 0 0.5em 0.5em 0;
+              //line-height: 1.5;
+              background-color: $yellow;
+              margin: 0 0.25em 0.25em 0;
               border-radius: 30px;
-              padding: 0.25em 0.5em;
+              padding: 0.5em 0.5em;
+              &:first-of-type {
+                background-color: transparent;
+                padding: 0.25em 0;
+                @include S;
+                font-weight: 400;
+                @include mb-S;
+              }
             }
             @include mb-L;
           }
@@ -582,11 +562,7 @@ nav {
             a {
               @include S;
               line-height: 1.5;
-              color: black;
-              text-decoration: underline;
-              &:hover {
-                text-decoration: none;
-              }
+              @include link;
               &:first-of-type {
                 margin: 0 25px 0 0;
                 @include desktop {
@@ -602,7 +578,6 @@ nav {
 }
 
 #cta {
-  border-top: 1px solid $gray-M;
   height: 100vh;
   width: 100%;
 
@@ -611,45 +586,39 @@ nav {
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    @include flex;
-    align-items: center;
+    @include flex-col-center;
   }
 
   p {
-    @include phone {
-      font-size: 2rem;
-      br:last-of-type {
-        display: none;
-      }
-    }
-    @include tablet {
-      font-size: 3rem;
-      //max-width: 25em;
-    }
-    @include desktop {
-      font-size: 4vw;
-      // max-width: 30em;
-    }
+    @include XL;
     line-height: 1.5;
-    //text-align: center;
+    text-align: center;
+    max-width: 20em;
+
     span:first-of-type {
       color: $blue;
     }
     span:nth-of-type(2) {
       color: $red;
     }
+    @include mb-L;
+  }
+
+  a {
+    @include L;
+    @include link;
   }
 }
 
 footer {
-  background-color: #f7f7f7;
+  background-color: $gray-S;
   padding: 50px 0;
   @include desktop {
     padding: 4vw 0;
   }
 
   > div {
-    // border: 1px solid red;
+    //border: 1px solid red;
     width: 90%;
     margin: 0 auto;
     @include flex;
@@ -660,44 +629,53 @@ footer {
       li {
         line-height: 1.5;
         a {
-          @include S;
+          @include L;
           @include phone {
-            @include XS;
+            @include S;
           }
           color: black;
           text-decoration: none;
           &:hover {
             text-decoration: underline;
           }
+          // Download
+          svg {
+            position: relative;
+            top: 0.3em;
+          }
         }
       }
     }
 
     ul:first-of-type {
-      width: 30%;
+      width: 40%;
+    }
+
+    @include desktop {
+      ul:first-of-type {
+        width: 30%;
+      }
     }
 
     @include phone {
+      ul:first-of-type {
+        width: 50%;
+      }
     }
 
     @media only screen and (max-width: 500px) {
-      flex-direction: column;
-      align-items: center;
+      @include flex-col-center;
+      text-align: center;
       @include mb-L;
+
       ul {
-        text-align: center;
-      }
-      ul:first-of-type {
-        width: 60%;
-        @include mb-L;
-      }
-      ul:nth-of-type(2) {
-        // min-width: 80%;
-        display: flex;
-        justify-content: space-between;
+        width: 100%;
         li {
-          margin: 0 25px;
+          a {
+            @include L;
+          }
         }
+        margin-bottom: 50px;
       }
     }
   }
@@ -708,9 +686,7 @@ footer {
     width: 90%;
     margin: 0 auto;
     @include S;
-    @include phone {
-      @include XS;
-    }
+
     svg {
       color: $red;
       position: relative;
@@ -719,6 +695,7 @@ footer {
     @media only screen and (max-width: 500px) {
       text-align: center;
       line-height: 1.5;
+      @include XS;
     }
   }
 }
