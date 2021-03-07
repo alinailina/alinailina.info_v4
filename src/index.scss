@@ -261,7 +261,7 @@ nav {
       li {
         width: 45%;
         h3 {
-          @include XXL;
+          @include XL;
           font-weight: 400;
           @include mb-XL;
         }
@@ -667,6 +667,10 @@ footer {
       @include flex-col-center;
       text-align: center;
       @include mb-L;
+
+      ul:first-of-type {
+        width: 100%;
+      }
 
       ul {
         width: 100%;
