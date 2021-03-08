@@ -251,15 +251,16 @@ nav {
   @include desktop {
     padding: 0 0 10vw 0;
   }
+  @include container;
 
   #skills {
-    @include mb-L;
+    @include mb-XL;
     ul {
-      @include container;
       @include flex;
       justify-content: space-between;
       li {
         width: 45%;
+
         h3 {
           @include XL;
           font-weight: 400;
@@ -291,40 +292,65 @@ nav {
   }
 
   #values {
-    > div {
-      @include container;
+    //border: 1px solid red;
+    width: 100%;
+    @include flex-col;
+    align-items: center;
+    @include phone {
+      align-items: flex-start;
+    }
+    @include mb-XL;
 
-      h3 {
-        @include XL;
-        font-weight: 400;
-        @include mb-XL;
-      }
+    h3 {
+      @include XL;
+      font-weight: 400;
+      @include mb-XL;
+    }
 
-      // Values
-      ul {
-        @include flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        @include mb-L;
-
-        li {
-          width: 30%;
-          @include tablet {
-            width: 45%;
-          }
+    ul {
+      // border: 1px solid red;
+      @include flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      li {
+        width: 30%;
+        @include tablet {
+          width: 45%;
+        }
+        @include phone {
+          width: 100%;
+        }
+        background-color: $gray-S;
+        margin: 0 0.25em 0.25em 0;
+        border-radius: 30px;
+        padding: 1em;
+        @include mb-S;
+        // Name
+        h4 {
+          //border: 1px solid red;
+          @include L;
           @include phone {
-            width: 100%;
+            @include S;
           }
-          @include mb-L;
 
-          h4 {
-            @include L;
-            @include phone {
-              @include S;
-            }
-            @include mb-S;
-            color: $blue;
+          cursor: pointer;
+          @include flex;
+          align-items: center;
+          justify-content: space-between;
+          svg {
+            position: relative;
+            top: 0.15em;
+            margin: 0 0.5em;
           }
+        }
+
+        // Text
+        > div {
+          overflow: hidden;
+          transition: all 0.5s ease;
+          padding: 0;
+          //margin: 10px 0;
 
           p {
             @include L;
@@ -332,28 +358,17 @@ nav {
               @include S;
             }
             line-height: 1.5;
+            // @include mb-S;
+            span {
+              color: $blue;
+            }
           }
-        }
-
-        @include phone {
-        }
-      }
-
-      > p {
-        @include L;
-        @include phone {
-          @include S;
-        }
-        line-height: 1.5;
-        span {
-          color: $blue;
         }
       }
     }
   }
 
-  #lol {
-    @include container;
+  #joke {
     @include mb-L;
     button {
       border: none;
@@ -376,6 +391,9 @@ nav {
       &.active {
         display: block;
         @include L;
+        @include phone {
+          @include S;
+        }
         line-height: 1.5;
         @include mb-XL;
       }
@@ -383,8 +401,6 @@ nav {
   }
 
   > h3 {
-    display: block;
-    @include container;
     @include XL;
     //font-weight: 400;
     span:first-of-type {

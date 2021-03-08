@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Values from "./Values";
 
 const Info = () => {
   const [active, setActive] = useState(false);
@@ -40,52 +41,8 @@ const Info = () => {
           </li>
         </ul>
       </div>
-      <div id="values">
-        <div>
-          <h3>I value 🙏</h3>
-          <ul>
-            <li>
-              <h4>Simplicity</h4>
-              <p>
-                Clean code, <span>functional interfaces</span>. I believe noise
-                inhibits utility, and seek to remove everything that doesn’t add
-                value.{" "}
-              </p>
-            </li>
-            <li>
-              <h4>Honesty</h4>
-              <p>
-                I believe in the power of{" "}
-                <span>honest communication, trust, transparency</span> and short
-                feedback cycle.
-              </p>
-            </li>
-            <li>
-              <h4>Ownership and accountability</h4>
-              <p>
-                I genuinely care about <span>making things better</span>.
-                Working with people who don’t is my worst nightmare.
-              </p>
-            </li>
-            <li>
-              <h4>Pixel-perfect precision</h4>
-              <p>
-                I do judge a book by its cover, and always aim for a{" "}
-                <span>highly polished design</span>, with a touch of awe(some).
-              </p>
-            </li>
-            <li>
-              <h4>Common sense</h4>
-              <p>
-                I believe <span>sound practical judgement</span> goes a looong
-                way.
-              </p>
-            </li>
-            <li className="empty-flex-item"></li>
-          </ul>
-        </div>
-      </div>
-      <div id="lol">
+      <Values />
+      <div id="joke">
         <button ref={titleRef} onClick={toogleActive}>
           What I don&apos;t
         </button>
@@ -100,7 +57,7 @@ const Info = () => {
       </div>
       <h3>
         As a <span>self-taught professional</span>, I’m driven by an
-        unquenchable desire to learn and <span>challengemy status quo</span> 🚀
+        unquenchable desire to learn and <span>challenge my status quo</span> 🚀
       </h3>
     </section>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import App from "./App";
-import apps from "./data";
+import { apps } from "../../data";
 
 import { handleDynamicHeight, applyScrollListener } from "./helpers.js";
 

@@ -65,4 +65,31 @@ const apps = [
   },
 ];
 
-export default apps;
+const values = [
+  {
+    name: "Simplicity",
+    text:
+      "Clean code, functional interfaces. I believe noise inhibits utility, and seek to remove anything that doesn’t add value.",
+  },
+  {
+    name: "Honesty",
+    text:
+      "I believe in the power of honest communication, trust, transparency and short feedback cycle.",
+  },
+  {
+    name: "Ownership",
+    text:
+      "I genuinely care about making things better. Working with people who don’t is my worst nightmare.",
+  },
+  {
+    name: "Pixel-perfect precision",
+    text:
+      "I do judge a book by its cover, and always aim for a highly polished design, with a touch of awe(some).",
+  },
+  {
+    name: "Common sense",
+    text: "I believe sound practical judgement goes a looong way.",
+  },
+];
+
+export { apps, values };
